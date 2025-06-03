@@ -163,7 +163,9 @@ public class GameController {
 
                 int Index = Math.min(insertIndex, timelineCards.size());
                 timelineCards.add(Index, card);
-                card.getCardOutline().setStyle(card.getCardOutline().getStyle()+"-fx-border-color:green;");
+                card.getCardOutline().setStyle(card.getCardOutline().getStyle()+"-fx-border-color:blue;");
+                System.out.println(card.getCardOutline().getStyle());
+
                 Bounds sceneAfter = card.localToScene(card.getBoundsInLocal());
                 double dx = sceneBefore.getMinX() - sceneAfter.getMinX();
                 double dy = sceneBefore.getMinY() - sceneAfter.getMinY();
