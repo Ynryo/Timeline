@@ -52,8 +52,8 @@ public class CardViewOnHand extends VBox {
 	public void setDateOnLabel(String text) {
 		cardDate.setText(text);
 	}
-	public void revealDate(Card card){
-		this.setDateOnLabel(card.getDate());
+	public void revealDate(){
+		setDateOnLabel(controller.getDateFromController());
 	}
 
 

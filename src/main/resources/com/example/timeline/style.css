@@ -145,6 +145,7 @@ ImageView {
 .title-card{
     -fx-font-size: 8px;
     -fx-text-fill: #000;
+    -fx-text-fill : linear-gradient(from 47.3934% 0.0% to 49.2891% 100.0%, #ffffff 0.0%, #ffffff 0.6711%, #ffdaaa 100.0%);
     -fx-font-weight: bold;
     -fx-background-radius:  0 0 10px 10px;
     -fx-pref-width: 62px;
@@ -154,7 +155,7 @@ ImageView {
     -fx-font-size: 8px;
     -fx-text-fill: #000;
     -fx-font-weight: bold;
-    -fx-background-color: linear-gradient(from 47.3934% 0.0% to 49.2891% 100.0%, #ffffff 0.0%, #ffffff 0.6711%, #ffdaaa 100.0%);
+    -fx-background-color: #1f1f1f;
     -fx-background-radius:  0 0 7px 7px;
     -fx-pref-width: 62px;
     -fx-min-height: 10px;
@@ -170,7 +171,8 @@ ImageView {
 }
 
 .year-pane {
-    -fx-background-color: #ffffff50;
+    -fx-background-radius:  3 3 0 0;
+    -fx-background-color: #1f1f1f;
     -fx-font-size: 20px;
 }
 
