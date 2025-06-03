@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 
-<StackPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.GameController">
+<StackPane stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.GameController">
 
    <BorderPane fx:id="cardPane" prefHeight="540.0" prefWidth="960.0" styleClass="background2" stylesheets="@style.css">
       <left>
@@ -28,5 +29,8 @@
       </center>
    </BorderPane>
 
-                                       <Pane fx:id="dragLayer" pickOnBounds="false" prefWidth="960.0" />
+                                       <Pane fx:id="dragLayer" pickOnBounds="false" prefWidth="960.0">
+      <children>
+         <Label fx:id="titreDeck" layoutX="373.0" layoutY="7.0" styleClass="titreDeck" stylesheets="@style.css" text="Titre deck" />
+      </children></Pane>
 </StackPane>
