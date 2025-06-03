@@ -5,11 +5,11 @@ import application.pojo.CardPOJO;
 public class Card {
 
     private String title;
-    private String date;
+    private int date;
     private int position;
     private String urlImage;
 
-    public Card(String title, String date, int position, String urlImage) {
+    public Card(String title, int date, int position, String urlImage) {
         super();
         this.title = title;
         this.date = date;
@@ -29,10 +29,10 @@ public class Card {
         return title;
     }
 
-    public String getDate() {
+    public int getDate() {
         return date;
     }
-    public void setDate(String date) {
+    public void setDate(int date) {
         this.date = date;
     }
     public String getUrlImage() {

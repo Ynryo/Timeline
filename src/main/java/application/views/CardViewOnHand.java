@@ -1,9 +1,6 @@
 package application.views;
 
-import java.io.IOException;
-
 import application.controller.CardOnHandController;
-import application.model.Card;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -12,6 +9,8 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
+
+import java.io.IOException;
 
 public class CardViewOnHand extends VBox {
 
@@ -49,8 +48,8 @@ public class CardViewOnHand extends VBox {
 	public void setTitleOnLabel(String text) {
 		cardTitle.setText(text);
 	}
-	public void setDateOnLabel(String text) {
-		cardDate.setText(text);
+	public void setDateOnLabel(int text) {
+		cardDate.setText(String.valueOf(text));
 	}
 	public void revealDate(){
 		setDateOnLabel(controller.getDateFromController());

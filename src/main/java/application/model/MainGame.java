@@ -9,9 +9,9 @@ public class MainGame {
 
 	// Constructeur
 	
-	public MainGame() {
+	public MainGame(String deckId) {
 		super();
-		setupGame();
+		setupGame(deckId);
 	}
 	
 	// getters / setter
@@ -30,9 +30,9 @@ public class MainGame {
 
 	// logic
 
-	private void setupGame() {
+	private void setupGame(String deckId) {
 		player1 = new Player("Joueur 1");
-		deck = new Deck();
+		deck = new Deck(deckId);
 		firstCard =  deck.drawCard();
 
 		for (int i = 0; i < INITIAL_NB_CARDS; i++) {

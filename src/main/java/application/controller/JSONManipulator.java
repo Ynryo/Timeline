@@ -16,13 +16,13 @@ import java.util.Map;
 
 public class JSONManipulator {
     private final String path;
+    Gson gson = new Gson();
 
     public JSONManipulator(String path) {
         this.path = path;
     }
 
     public Map<String, Object> getDeckInfo(String deckId) {
-        Gson gson = new Gson();
         Map<String, Object> deckInfo = new HashMap<>();
         
         try (Reader reader = new FileReader(path)) {
@@ -88,7 +88,6 @@ public class JSONManipulator {
     }
     
     public void addCard(String deckId, String title, int year, String imageURL, String description) {
-        Gson gson = new Gson();
         try (Reader reader = new FileReader(path)) {
             Type type = new TypeToken<Map<String, Map<String, Object>>>() {}.getType();
             Map<String, Map<String, Object>> data = gson.fromJson(reader, type);
@@ -127,7 +126,6 @@ public class JSONManipulator {
     }
     
     public void createDeck(String deckId, String name, String description) {
-        Gson gson = new Gson();
         try (Reader reader = new FileReader(path)) {
             Type type = new TypeToken<Map<String, Map<String, Object>>>() {}.getType();
             Map<String, Map<String, Object>> data = gson.fromJson(reader, type);
@@ -153,7 +151,6 @@ public class JSONManipulator {
     }
     
     public void updateDeckInfo(String deckId, String name, String description) {
-        Gson gson = new Gson();
         try (Reader reader = new FileReader(path)) {
             Type type = new TypeToken<Map<String, Map<String, Object>>>() {}.getType();
             Map<String, Map<String, Object>> data = gson.fromJson(reader, type);
@@ -176,7 +173,6 @@ public class JSONManipulator {
     }
     
     public void removeCard(String deckId, int index) {
-        Gson gson = new Gson();
         try (Reader reader = new FileReader(path)) {
             Type type = new TypeToken<Map<String, Map<String, Object>>>() {}.getType();
             Map<String, Map<String, Object>> data = gson.fromJson(reader, type);
@@ -202,7 +198,6 @@ public class JSONManipulator {
     }
     
     public void updateCard(String deckId, int index, String title, int year, String imageURL, String description) {
-        Gson gson = new Gson();
         try (Reader reader = new FileReader(path)) {
             Type type = new TypeToken<Map<String, Map<String, Object>>>() {}.getType();
             Map<String, Map<String, Object>> data = gson.fromJson(reader, type);
@@ -242,7 +237,6 @@ public class JSONManipulator {
     }
     
     public List<String> getAllDeckIds() {
-        Gson gson = new Gson();
         try (Reader reader = new FileReader(path)) {
             Type type = new TypeToken<Map<String, Map<String, Object>>>() {}.getType();
             Map<String, Map<String, Object>> data = gson.fromJson(reader, type);

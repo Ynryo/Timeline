@@ -3,13 +3,10 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.text.Font?>
-
-<AnchorPane prefHeight="200.0" prefWidth="280.0" style="-fx-background-color: white; -fx-border-radius: 15px; -fx-border-color: BD6B00; -fx-border-width: 4;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.DeckPresentationController">
+<AnchorPane fx:id="deck_presentation" maxHeight="200.0" onMouseClicked="#onClicked" prefHeight="200.0" prefWidth="280.0" style="-fx-background-color: white; -fx-border-radius: 15px; -fx-border-color: BD6B00; -fx-border-width: 4;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.DeckPresentationController">
    <children>
       <Label fx:id="TextNomDeck" alignment="CENTER" layoutX="4.0" layoutY="2.0" prefHeight="115.0" prefWidth="166.0" text="NOM DECK" textAlignment="CENTER" wrapText="true">
          <font>

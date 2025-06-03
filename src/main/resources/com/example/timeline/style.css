@@ -139,7 +139,7 @@
 
 ImageView {
     -fx-pref-width: 60px;
-    -fx-pref-height:40px
+    -fx-pref-height:40px;
     -fx-background-radius: 10px;
 }
 .title-card{

@@ -23,7 +23,7 @@ public class CardOnHandController {
 		view = cardViewOnHand;
 	}
 
-	public String getDateFromController(){
+	public int getDateFromController(){
 		return controlledCard.getDate();
 	}
 

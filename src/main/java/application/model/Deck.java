@@ -1,29 +1,28 @@
 package application.model;
 
+import application.io.CardLoader;
+import application.io.JSONCardLoader;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import application.io.CardLoader;
-import application.io.FAKECardLoader;
 
 public class Deck {
 
     private String title;
     private List<Card> cards;
 
-    public Deck() {
+    public Deck(String deckId) {
         cards = new ArrayList<>();
-
-        setup();
+        setup(deckId);
     }
     public void ajouterCarte(Card carte) {
         if (carte != null) {
             cards.add(carte);
         }
     }
-    private void setup() {
-        CardLoader loader = new FAKECardLoader();
+    private void setup(String deckId) {
+        CardLoader loader = new JSONCardLoader(deckId);
         loader.load();
         cards = loader.getCards();
         title = loader.getTitle();
@@ -56,4 +55,12 @@ public class Deck {
     }
 
 
+    public void add(Card tmpCard) {
+        cards.add(tmpCard);
+    }
+
+    @Override
+    public String toString() {
+        return "Deck [title=" + title + ", number of cards=" + cards.size() + "]";
+    }
 }

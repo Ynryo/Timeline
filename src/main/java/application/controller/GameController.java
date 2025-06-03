@@ -7,14 +7,10 @@ import application.views.CardViewOnHand;
 import javafx.animation.Interpolator;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.geometry.Bounds;
-import javafx.geometry.Insets;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
@@ -22,7 +18,6 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class GameController {
     @FXML
@@ -39,6 +34,7 @@ public class GameController {
 
     private final Pane placeholder = new Pane();
     private final List<CardViewOnHand> timelineCards = new ArrayList<>();
+    private String selectedDeck;
     public GameController() {
         super();
     }
@@ -47,9 +43,13 @@ public class GameController {
     public void initialize() throws IOException {
 
         initUI();
-        model = new MainGame();
+        model = new MainGame(selectedDeck);
         initUIFromModel();
 
+    }
+
+    public void setSelectedDeck(String selectedDeck) {
+        this.selectedDeck = selectedDeck;
     }
 
     private void initUI() {

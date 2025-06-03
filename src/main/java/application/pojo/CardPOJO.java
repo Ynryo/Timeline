@@ -4,7 +4,7 @@ public class CardPOJO {
 
 	public String name;
 	public String description;
-	public String date;
+	public int date;
 	public String url;
 	
 }
