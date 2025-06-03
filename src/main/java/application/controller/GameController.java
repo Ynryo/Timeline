@@ -1,5 +1,9 @@
 package application.controller;
 
+import application.model.Card;
+import application.model.Hand;
+import application.model.MainGame;
+import application.views.CardViewOnHand;
 import javafx.animation.Interpolator;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
@@ -27,23 +31,60 @@ public class GameController {
     private HBox handZone;
     @FXML
     private Pane dragLayer;
+    @FXML
+    private Label titreDeck;
 
-    private final List<Parent> gameCards = new ArrayList<>();
+    private MainGame model;
+
+
     private final Pane placeholder = new Pane();
+
+    public GameController() {
+        super();
+    }
 
     @FXML
     public void initialize() throws IOException {
-        for (int i = 1900; i < 10+1900; i++) {
-            Parent card = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/example/timeline/card.fxml")));
-            card.setScaleX(1);
-            card.setScaleY(1);
-            Label label = (Label) ((Pane) card).getChildren().get(0);
-            label.setText(String.valueOf(i + 1));
-            makeDraggable(card);
-            handZone.getChildren().add(card);
-            gameCards.add(card);
+
+        initUI();
+        model = new MainGame();
+        initUIFromModel();
+
+    }
+
+    private void initUI() {
+        handZone.getChildren().clear();
+    }
+
+    private void initUIFromModel() {
+        titreDeck.setText(model.getDeck().getTitle());
+        handZone.getChildren().clear();
+        displayPlayerHand();
+        displayFirstCard();
+    }
+
+    private void displayPlayerHand() {
+        Hand hand = model.getPlayerHand();
+
+        for (Card aCard : hand.getCards()) {
+            CardViewOnHand view = createViewCard(aCard,this);
+            handZone.getChildren().add(view);
         }
     }
+    private void displayFirstCard (){
+        CardViewOnHand view = createViewCard(model.getFirstCard(),this);
+        view.revealDate(model.getFirstCard());
+        dropZone.getChildren().add(view);
+
+    }
+
+    private CardViewOnHand createViewCard (Card aCard, GameController aGameController){
+        CardOnHandController controller = new CardOnHandController(aCard, this);
+        CardViewOnHand view = new CardViewOnHand(controller);
+        makeDraggable(view.getVBoxCard());
+        return view;
+    }
+
 
     private void makeDraggable(Node card) {
         final double[] offset = new double[2];
@@ -126,11 +167,11 @@ public class GameController {
                 card.setTranslateX(dx);
                 card.setTranslateY(dy);
 
-                TranslateTransition transition = new TranslateTransition(Duration.millis(120), card);
-                transition.setInterpolator(Interpolator.SPLINE(0.25, 0.1, 0.25, 1));
-                transition.setToX(0);
-                transition.setToY(0);
-                transition.setOnFinished(evt -> {
+                TranslateTransition tt = new TranslateTransition(Duration.millis(120), card);
+                tt.setInterpolator(Interpolator.SPLINE(0.25, 0.1, 0.25, 1));
+                tt.setToX(0);
+                tt.setToY(0);
+                tt.setOnFinished(evt -> {
                     card.setOnMousePressed(null);
                     card.setOnMouseDragged(null);
                     card.setOnMouseReleased(null);
@@ -141,7 +182,7 @@ public class GameController {
                     card.setMouseTransparent(false);
                     updateCardOverlapping();
                 });
-                transition.play();
+                tt.play();
 
             } else {
                 Object[] data = (Object[]) card.getUserData();

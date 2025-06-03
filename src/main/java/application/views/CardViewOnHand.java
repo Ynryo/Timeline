@@ -3,8 +3,10 @@ package application.views;
 import java.io.IOException;
 
 import application.controller.CardOnHandController;
+import application.model.Card;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -14,50 +16,55 @@ import javafx.scene.layout.VBox;
 public class CardViewOnHand extends VBox {
 
 	private CardOnHandController controller;
-	
+
 	private ImageView cardImage;
 	private Label cardTitle;
+	private Label cardDate;
+	private Parent root ;
 
-	public CardViewOnHand(CardOnHandController controller, boolean cardIsSelected) {
+	public CardViewOnHand(CardOnHandController controller) {
 		super();
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("CardView.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/timeline/card-view.fxml"));
 		try {
 			this.controller = controller;
-			Parent root = loader.load();
-			root.setScaleX(0.8);
-			root.setScaleY(0.8);
-			controller.setView(this);
-			cardTitle = ((Label) root.lookup("#title"));
-			cardImage = ((ImageView) root.lookup("#image"));
-			this.setAlignment(Pos.CENTER);
+			root = loader.load();
 
-			if (cardIsSelected) {
-				root.setScaleX(1.);
-				root.setScaleY(1.);
-			}
+			controller.setView(this);
+			cardTitle = ((Label) root.lookup("#card_title"));
+			cardDate = ((Label) root.lookup("#card_date"));
+			cardImage = ((ImageView) root.lookup("#card_img"));
+
+			this.setAlignment(Pos.CENTER);
 
 			this.getChildren().add(root);
 			controller.initView();
 
-			this.setOnMouseClicked(event-> {
-				selection();
-			});
 
 		} catch (IOException e) {
 			System.err.println("Problem while loading the card fxml");
-		}
+			e.printStackTrace();        }
 	}
 
-	private void selection() {
-		controller.selectAction();
-	}
-	
-	public void setTitle(String text) {
+
+	public void setTitleOnLabel(String text) {
 		cardTitle.setText(text);
 	}
- 
+	public void setDateOnLabel(String text) {
+		cardDate.setText(text);
+	}
+	public void revealDate(Card card){
+		this.setDateOnLabel(card.getDate());
+	}
+
+
+
 	public void setCardImage(Image image) {
 		cardImage.setImage(image);
+	}
+
+	public Node getVBoxCard(){
+		Node node  = (Node) this ;
+		return node;
 	}
 
 }

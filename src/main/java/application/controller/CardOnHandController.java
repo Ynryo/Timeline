@@ -6,29 +6,23 @@ import application.views.CardViewOnHand;
 
 public class CardOnHandController {
 
-	private application.controller.ControllerMainScreen mainController;
+	private application.controller.GameController mainController;
 	private CardViewOnHand view;
 	private Card controlledCard;
 
 
-	public CardOnHandController(Card aCard, application.controller.ControllerMainScreen controllerMainScreen) {
+	public CardOnHandController(Card aCard, application.controller.GameController gameController) {
 		this.controlledCard = aCard;
-		mainController = controllerMainScreen;
+		mainController = gameController;
 	}
-
 	public void initView() {
-		view.setTitle(controlledCard.getTitle());
-		view.setCardImage(ImageManager.getInstance().getImage(controlledCard.getUrlImage())); 
+		view.setTitleOnLabel(controlledCard.getTitle());
+		view.setCardImage(ImageManager.getInstance().getImage(controlledCard.getUrlImage()));
 	}
-
-	public void selectAction() {
-		mainController.setCardSelected(controlledCard);
-	}
-
 	public void setView(CardViewOnHand cardViewOnHand) {
 		view = cardViewOnHand;
 	}
-	
-	
-	
+
+
+
 }
