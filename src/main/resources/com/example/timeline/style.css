@@ -1,0 +1,179 @@
+@font-face {
+    font-family: 'Koulen';
+    src: url('fonts/Koulen-Regular.ttf');
+}
+.background1{
+    -fx-background-image: url("images/background.png");
+    -fx-background-size: cover;
+}
+.background2{
+    -fx-background-image: url("images/background2.png");
+    -fx-background-size: cover;
+}
+.timeline-title{
+    -fx-font-family: "Koulen";
+    -fx-font-size:120;
+    -fx-text-fill: linear-gradient(from 49.2891% 0.0% to 48.3412% 72.0379%, #2f0e00 0.0%, #bd6b00 100.0%);
+    -fx-padding : 0;
+    -fx-min-height: 140;
+}
+.title{
+    -fx-font-family: "Koulen";
+    -fx-font-size:60;
+    -fx-text-fill: linear-gradient(from 47.3934% 0.0% to 49.2891% 100.0%, #ffffff 0.0%, #ffffff 0.6711%, #ffdaaa 100.0%);
+    -fx-padding : 0;
+    -fx-min-height: 80;
+}
+.menu-button{
+    -fx-font-family: "Koulen";
+    -fx-background-color : linear-gradient(from 0.0% 48.8152% to 100.0% 52.1327%, #844b00 0.0%, #844b00 0.6711%, #bd6b00 100.0%);
+    -fx-text-fill : white;
+    -fx-font-size: 25;
+    -fx-max-width: 200;
+    -fx-max-height: 65;
+    -fx-min-width: 200;
+    -fx-min-height: 65;
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 7, 0.1, 0, 2);
+}
+.menu-button:hover{
+    -fx-background-color: linear-gradient(from 0.0% 48.8152% to 100.0% 52.1327%, #5c3300 0.0%, #5c3300 0.6711%, #a15800 100.0%);
+}
+
+.menu-outline-button{
+    -fx-font-family: "Koulen";
+    -fx-border-width:3;
+    -fx-border-radius:5;
+    -fx-border-color : linear-gradient(from 0.0% 48.8152% to 100.0% 52.1327%, #844b00 0.0%, #844b00 0.6711%, #bd6b00 100.0%);
+    -fx-text-fill : linear-gradient(from 0.0% 48.8152% to 100.0% 52.1327%, #844b00 0.0%, #844b00 0.6711%, #bd6b00 100.0%);
+    -fx-background-color: transparent;
+    -fx-font-size: 25;
+    -fx-max-width: 200;
+    -fx-max-height: 65;
+    -fx-min-width: 200;
+    -fx-min-height: 65;
+    -fx-padding: 0 0 0 0;
+}
+
+.menu-outline-button:hover{
+    -fx-border-color : linear-gradient(from 0.0% 48.8152% to 100.0% 52.1327%, #5c3300 0.0%, #5c3300 0.6711%, #a15800 100.0%);
+    -fx-text-fill : linear-gradient(from 0.0% 48.8152% to 100.0% 52.1327%, #5c3300 0.0%, #5c3300 0.6711%, #a15800 100.0%);
+    -fx-background-color: linear-gradient(
+        from 0.0% 48.8152% to 100.0% 52.1327%,
+        rgba(92, 51, 0, 0.2) 0.0%,
+        rgba(92, 51, 0, 0.2) 0.6711%,
+        rgba(161, 88, 0, 0.2) 100.0%
+    );
+}
+.card{
+    -fx-background-color: transparent;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+.card .label{
+    -fx-background-radius: 15;
+    -fx-font-size : 25;
+    -fx-background-color:white;
+    -fx-border-color:black;
+    -fx-border-width:10;
+    -fx-border-radius:10;
+    -fx-font-family:'Koulen';
+}
+
+.drop-box{
+    -fx-background-color : rgba(255, 255, 255, 0.3);
+    -fx-background-radius: 20;
+}
+.transparent-scrollpane{
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.transparent-scrollpane .viewport {
+    -fx-background-color: transparent;
+}
+
+.gridpane{
+    -fx-background-color: transparent;
+    -fx-border-color : transparent;
+
+}
+
+.card{
+    -fx-background-color: transparent;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+.card .label{
+    -fx-background-radius: 15;
+    -fx-font-size : 25;
+    -fx-background-color:white;
+    -fx-border-color:black;
+    -fx-border-width:10;
+    -fx-border-radius:10;
+    -fx-font-family:'Koulen';
+}
+
+.drop-box{
+    -fx-background-color : rgba(255, 255, 255, 0.3);
+    -fx-background-radius: 20;
+}
+
+
+.titreDeck{
+    -fx-font-family:'Koulen';
+        -fx-font-size : 50;
+        -fx-text-fill: #E8D1B2
+}
+
+
+.container {
+    -fx-background-radius: 10px;
+    -fx-background-color: #000;
+    -fx-padding : 2px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+
+ImageView {
+    -fx-pref-width: 60px;
+    -fx-pref-height:40px
+    -fx-background-radius: 10px;
+}
+.title-card{
+    -fx-font-size: 8px;
+    -fx-text-fill: #000;
+    -fx-font-weight: bold;
+    -fx-background-radius:  0 0 10px 10px;
+    -fx-pref-width: 62px;
+    -fx-min-height: 10px;
+}
+.title-card-pane {
+    -fx-font-size: 8px;
+    -fx-text-fill: #000;
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(from 47.3934% 0.0% to 49.2891% 100.0%, #ffffff 0.0%, #ffffff 0.6711%, #ffdaaa 100.0%);
+    -fx-background-radius:  0 0 7px 7px;
+    -fx-pref-width: 62px;
+    -fx-min-height: 10px;
+}
+
+.year {
+    -fx-font-size: 20px;
+    -fx-text-fill: linear-gradient(from 47.3934% 0.0% to 49.2891% 100.0%, #ffffff 0.0%, #ffffff 0.6711%, #ffdaaa 100.0%);
+    -fx-font-family: 'Koulen';
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 0 0;
+    -fx-line-spacing: 0;
+}
+
+.year-pane {
+    -fx-background-color: #ffffff50;
+    -fx-font-size: 20px;
+}
+
+.card-image{
+    -fx-border-radius: 20;
+}
