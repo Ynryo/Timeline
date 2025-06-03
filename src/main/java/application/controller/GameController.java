@@ -38,7 +38,7 @@ public class GameController {
 
 
     private final Pane placeholder = new Pane();
-
+    private final List<CardViewOnHand> timelineCards = new ArrayList<>();
     public GameController() {
         super();
     }
@@ -73,20 +73,21 @@ public class GameController {
     }
     private void displayFirstCard (){
         CardViewOnHand view = createViewCard(model.getFirstCard(),this);
-        view.revealDate(model.getFirstCard());
+        view.revealDate();
         dropZone.getChildren().add(view);
-
     }
 
     private CardViewOnHand createViewCard (Card aCard, GameController aGameController){
         CardOnHandController controller = new CardOnHandController(aCard, this);
         CardViewOnHand view = new CardViewOnHand(controller);
-        makeDraggable(view.getVBoxCard());
+        if (!(aCard == aGameController.model.getFirstCard())){
+            makeDraggable(view);
+        }
         return view;
     }
 
 
-    private void makeDraggable(Node card) {
+    private void makeDraggable(CardViewOnHand card) {
         final double[] offset = new double[2];
 
         placeholder.setPrefSize(50, 90);
@@ -160,6 +161,11 @@ public class GameController {
                 dropZone.getChildren().add(insertIndex, card);
                 dropZone.applyCss();
                 dropZone.layout();
+                card.revealDate();
+
+                int Index = Math.min(insertIndex, timelineCards.size());
+                timelineCards.add(Index, card);
+                System.out.println("Cartes dans timeline");
 
                 Bounds sceneAfter = card.localToScene(card.getBoundsInLocal());
                 double dx = sceneBefore.getMinX() - sceneAfter.getMinX();

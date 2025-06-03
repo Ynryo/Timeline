@@ -23,6 +23,9 @@ public class CardOnHandController {
 		view = cardViewOnHand;
 	}
 
+	public String getDateFromController(){
+		return controlledCard.getDate();
+	}
 
 
 }
