@@ -1,0 +1,46 @@
+{
+  "consoles": {
+    "name": "Les consoles vidéos",
+    "description": "Deck sur les consoles de jeux",
+    "cards": [
+      {
+        "title": "Nintendo Switch 2",
+        "year": 2025,
+        "imageURL" : "switch2.jpg",
+        "description": "description"
+      },
+      {
+        "title": "PSP",
+        "year": 2008,
+        "imageURL" : "psp.png"
+      },
+      {
+        "title": "Wii",
+        "year": 2006,
+        "imageURL" : "wii.jpg"
+      }
+    ]
+  },
+  "consoles2": {
+  "name": "Les consoles vidéos",
+  "description": "Deck sur les consoles de jeux",
+  "cards": [
+    {
+      "title": "Nintendo Switch 2",
+      "year": 2025,
+      "imageURL" : "switch2.jpg",
+      "description": "description"
+    },
+    {
+      "title": "PSP",
+      "year": 2008,
+      "imageURL" : "psp.png"
+    },
+    {
+      "title": "Wii",
+      "year": 2006,
+      "imageURL" : "wii.jpg"
+    }
+  ]
+}
+}

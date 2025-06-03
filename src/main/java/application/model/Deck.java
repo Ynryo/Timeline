@@ -17,7 +17,11 @@ public class Deck {
 
         setup();
     }
-
+    public void ajouterCarte(Card carte) {
+        if (carte != null) {
+            cards.add(carte);
+        }
+    }
     private void setup() {
         CardLoader loader = new FAKECardLoader();
         loader.load();
@@ -35,6 +39,16 @@ public class Deck {
 
     public boolean hasMoreCards() {
         return !cards.isEmpty();
+    }
+    public String getNom() {
+        return title;
+    }
+
+    public void setNom(String nom) {
+        this.title = nom;
+    }
+    public List<Card> getCards() {
+        return cards;
     }
 
     public String getTitle() {

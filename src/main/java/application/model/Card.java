@@ -32,10 +32,16 @@ public class Card {
     public String getDate() {
         return date;
     }
-
+    public void setDate(String date) {
+        this.date = date;
+    }
     public String getUrlImage() {
         return urlImage;
     }
+    public void setUrl(String url) {
+        this.urlImage = url;
+    }
+
 
     public int getPosition() {
         return position;
@@ -44,6 +50,9 @@ public class Card {
     @Override
     public String toString() {
         return "Card [title=" + title + ", date=" + date + ", position=" + position + "]";
+    }
+    public void setNom(String nom) {
+        this.title = nom;
     }
 
 
