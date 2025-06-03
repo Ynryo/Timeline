@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="card_vbox" alignment="TOP_CENTER" fillWidth="false" maxHeight="90.0" maxWidth="70.0" minHeight="100.0" minWidth="70.0" prefHeight="90.0" prefWidth="70.0" styleClass="container" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fx:id="card_img" fitHeight="52.0" fitWidth="51.0" focusTraversable="true" preserveRatio="true" smooth="false" style="ra: 10;">
+         <image>
+            <Image url="@../../../../../../../../demo - Copie-20250526T103556Z-1-001 (2)/demo - Copie-20250526T103556Z-1-001/demo - Copie/src/main/resources/com/example/demo/image/default.png" />
+         </image>
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+      </ImageView>
+      <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0">
+         <children>
+         
+                <!-- Année -->
+             <Label fx:id="card_date" alignment="CENTER" prefHeight="21.0" prefWidth="60.0" styleClass="year">
+                 <font>
+                     <Font name="Arial Bold" size="16" />
+                 </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+             </Label>
+         
+                <!-- Nom -->
+             <Label fx:id="card_title" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" styleClass="title" text="Titre carte ">
+                 <font>
+                     <Font name="Arial Bold" size="20" />
+                 </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+             </Label>
+         </children>
+      </VBox>
+   </children>
+</VBox>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" styleClass="background1" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MenuPrincipalController">
+   <children>
+      <Pane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <VBox fx:id="mainVBox" alignment="CENTER" layoutX="73.0" layoutY="156.0">
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="89.0" mnemonicParsing="false" onAction="#onContinuerClicked" prefHeight="153.0" prefWidth="180.0" styleClass="menu-button" text="CONTINUER" />
+                  <Pane prefHeight="20.0" prefWidth="415.0" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onNouvellePartieClicked" styleClass="menu-button" text="NOUVELLE PARTIE" />
+                  <Pane prefHeight="20.0" prefWidth="415.0" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="menu-button" text="GERER MES DECKS" />
+                  <Pane prefHeight="20.0" prefWidth="415.0" />
+                  <Button fx:id="buttonQuitter" alignment="CENTER" contentDisplay="CENTER" maxHeight="131.0" mnemonicParsing="false" onAction="#handleQuitter" prefWidth="200.0" styleClass="menu-outline-button" text="QUITTER" />
+               </children>
+            </VBox>
+            <VBox fx:id="nouvellePartieVBox" alignment="CENTER" layoutX="73.0" layoutY="156.0" visible="false">
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="89.0" mnemonicParsing="false" onAction="#on1PlayerClicked" prefHeight="153.0" prefWidth="180.0" styleClass="menu-button" text="1 JOUEUR" />
+                  <Pane prefHeight="20.0" prefWidth="415.0" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#on2PlayerClicked" styleClass="menu-button" text="2 JOUEURS" />
+                  <Pane prefHeight="20.0" prefWidth="415.0" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="131.0" mnemonicParsing="false" onAction="#onNouvellePartieRetourClicked" prefWidth="200.0" styleClass="menu-outline-button" text="RETOUR" />
+               </children>
+            </VBox>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="73.0" layoutY="-27.0" maxHeight="210.0" prefHeight="183.0" prefWidth="415.0" styleClass="timeline-title" text="TIMELINE" textFill="#bd6800" />
+         </children>
+      </Pane>
+   </children>
+</StackPane>
