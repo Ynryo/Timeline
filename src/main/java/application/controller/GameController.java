@@ -5,6 +5,8 @@ import application.model.Hand;
 import application.model.MainGame;
 import application.views.CardViewOnHand;
 import javafx.animation.Interpolator;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +19,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -73,6 +76,8 @@ public class GameController {
         CardViewOnHand view = createViewCard(model.getFirstCard(),this);
         view.revealDate();
         dropZone.getChildren().add(view);
+        timelineCards.add(view);
+
     }
 
     private CardViewOnHand createViewCard (Card aCard, GameController aGameController){
@@ -161,10 +166,17 @@ public class GameController {
                 dropZone.layout();
                 card.revealDate();
 
+
+
                 int Index = Math.min(insertIndex, timelineCards.size());
                 timelineCards.add(Index, card);
-                card.getCardOutline().setStyle(card.getCardOutline().getStyle()+"-fx-border-color:blue;");
-                System.out.println(card.getCardOutline().getStyle());
+
+                System.out.println("Dates:");
+                for (CardViewOnHand cardDisplay : timelineCards){
+                    System.out.println(cardDisplay.getDate());
+                }
+
+
 
                 Bounds sceneAfter = card.localToScene(card.getBoundsInLocal());
                 double dx = sceneBefore.getMinX() - sceneAfter.getMinX();
@@ -186,9 +198,10 @@ public class GameController {
                     card.setTranslateY(0);
                     card.setMouseTransparent(false);
                     updateCardOverlapping();
+
+                    checkPlacement(card, Index);
                 });
                 tt.play();
-
             } else {
                 Object[] data = (Object[]) card.getUserData();
                 double initX = (double) data[0];
@@ -215,6 +228,63 @@ public class GameController {
             }
         });
         card.setOnMouseEntered(e -> card.setCursor(Cursor.HAND));
+    }
+
+    private void checkPlacement(CardViewOnHand card, int Index) {
+        int currentDate = Integer.parseInt(card.getDate());
+        boolean correct = false;
+
+        boolean hasLeft = Index > 0;
+        boolean hasRight = Index < timelineCards.size() - 1;
+
+        if (hasLeft && hasRight) {
+            int leftDate = Integer.parseInt(timelineCards.get(Index - 1).getDate());
+            int rightDate = Integer.parseInt(timelineCards.get(Index + 1).getDate());
+
+            if ((leftDate <= currentDate && currentDate <= rightDate) ||
+                    (rightDate <= currentDate && currentDate <= leftDate)) {
+                correct = true;
+            }
+
+        } else if (!hasLeft && hasRight) {
+            int rightDate = Integer.parseInt(timelineCards.get(Index + 1).getDate());
+            if (currentDate < rightDate) {
+                correct = true;
+            }
+
+        } else if (hasLeft && !hasRight) {
+            int leftDate = Integer.parseInt(timelineCards.get(Index - 1).getDate());
+            if (currentDate > leftDate) {
+                correct = true;
+            }
+        }
+        if (correct) {
+            System.out.println("gg");
+            colorOutline(card);
+        }
+    }
+
+    private static void colorOutline(CardViewOnHand card) {
+        Timeline timeline = new Timeline();
+
+        Duration duration = Duration.millis(1000);
+
+        int frame = 20;
+        for (int i = 0; i <= frame; i++) {
+            double t = i / (double) frame;
+            Color interpolated = Color.web("#88ff00").interpolate(Color.BLACK, t);
+            String hex = String.format("#%02x%02x%02x",
+                    (int)(interpolated.getRed() * 255),
+                    (int)(interpolated.getGreen() * 255),
+                    (int)(interpolated.getBlue() * 255)
+            );
+            KeyFrame keyFrame = new KeyFrame(
+                    duration.multiply(t),
+                    evt -> card.getCardOutline().setStyle(card.getCardOutline().getStyle()+ "-fx-border-color: " + hex + ";")
+            );
+            timeline.getKeyFrames().add(keyFrame);
+        }
+        timeline.play();
     }
 
     private void updateCardOverlapping() {

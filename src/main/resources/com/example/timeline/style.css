@@ -130,7 +130,7 @@
 
 .container {
     -fx-background-radius: 10px;
-    -fx-background-color: #000;
+    -fx-padding: 5;
     -fx-padding : 2px;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
@@ -138,11 +138,12 @@
 
 
 ImageView {
-    -fx-pref-width: 60px;
+    -fx-pref-width: 79px;
     -fx-pref-height:40px
     -fx-background-radius: 10px;
 }
 .title-card{
+    -fx-font-family: 'Koulen';
     -fx-font-size: 8px;
     -fx-text-fill: #000;
     -fx-text-fill : linear-gradient(from 47.3934% 0.0% to 49.2891% 100.0%, #ffffff 0.0%, #ffffff 0.6711%, #ffdaaa 100.0%);
@@ -163,7 +164,7 @@ ImageView {
 
 .year {
     -fx-font-size: 20px;
-    -fx-text-fill: linear-gradient(from 47.3934% 0.0% to 49.2891% 100.0%, #ffffff 0.0%, #ffffff 0.6711%, #ffdaaa 100.0%);
+    -fx-text-fill: linear-gradient(from 47.3934% 0.0% to 49.2891% 100.0%, #ffe675 0.0%, #a76d05 100.0%);
     -fx-font-family: 'Koulen';
     -fx-background-color: transparent;
     -fx-padding: 0 0 0 0;
@@ -171,11 +172,18 @@ ImageView {
 }
 
 .year-pane {
-    -fx-background-radius:  3 3 0 0;
+    -fx-background-radius:  5 5 0 0;
     -fx-background-color: #1f1f1f;
     -fx-font-size: 20px;
 }
 
 .card-image{
     -fx-border-radius: 20;
+}
+
+
+.card-outline{
+-fx-border-width:5;
+-fx-border-color:black;
+-fx-border-radius:8;
 }

@@ -31,6 +31,6 @@
 
                                        <Pane fx:id="dragLayer" pickOnBounds="false" prefWidth="960.0">
       <children>
-         <Label fx:id="titreDeck" layoutX="373.0" layoutY="7.0" styleClass="titreDeck" stylesheets="@style.css" text="Titre deck" />
+         <Label fx:id="titreDeck" layoutX="373.0" layoutY="7.0" styleClass="title" stylesheets="@style.css" text="Titre deck" />
       </children></Pane>
 </StackPane>
