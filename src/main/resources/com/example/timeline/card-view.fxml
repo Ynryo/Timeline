@@ -9,7 +9,7 @@
 
 <VBox fx:id="card_vbox" alignment="TOP_CENTER" fillWidth="false" maxHeight="90.0" maxWidth="70.0" minHeight="100.0" minWidth="70.0" prefHeight="90.0" prefWidth="70.0" styleClass="container" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Pane prefHeight="116.0" prefWidth="66.0">
+      <Pane fx:id="cardOutline" prefHeight="116.0" prefWidth="66.0">
          <children>
             <ImageView fx:id="card_img" fitHeight="80.0" fitWidth="62.0" layoutX="2.0" layoutY="2.0" pickOnBounds="true" styleClass="card-image" />
             <Pane layoutX="14.0" layoutY="63.0" prefHeight="19.0" prefWidth="38.0" styleClass="year-pane">

@@ -35,8 +35,6 @@ public class GameController {
     private Label titreDeck;
 
     private MainGame model;
-
-
     private final Pane placeholder = new Pane();
     private final List<CardViewOnHand> timelineCards = new ArrayList<>();
     public GameController() {
@@ -165,8 +163,7 @@ public class GameController {
 
                 int Index = Math.min(insertIndex, timelineCards.size());
                 timelineCards.add(Index, card);
-                System.out.println("Cartes dans timeline");
-
+                card.getCardOutline().setStyle(card.getCardOutline().getStyle()+"-fx-border-color:green;");
                 Bounds sceneAfter = card.localToScene(card.getBoundsInLocal());
                 double dx = sceneBefore.getMinX() - sceneAfter.getMinX();
                 double dy = sceneBefore.getMinY() - sceneAfter.getMinY();
