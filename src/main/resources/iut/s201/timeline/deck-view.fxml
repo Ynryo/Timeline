@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" styleClass="deck-background" stylesheets="@../../../style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iut.s201.timeline.HelloController">
+   <top>
+      <AnchorPane prefHeight="40.0" prefWidth="960.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="160.0" layoutY="22.0" mnemonicParsing="false" onAction="#close" prefHeight="0.0" prefWidth="21.5" rotate="0.0" scaleX="1.0" scaleY="1.0" styleClass="back-button" translateX="0.0" translateY="0.0">
+               <graphic>
+                  <ImageView fitWidth="21.5" pickOnBounds="true" preserveRatio="true" rotate="0.0" scaleX="1.0" scaleY="1.0" translateX="0.0" translateY="0.0">
+                     <image>
+                        <Image url="@../../../back-arrow.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </top>
+   <left>
+      <AnchorPane prefHeight="458.0" prefWidth="601.5" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="175.0" styleClass="koulen" text="Nom Deck :">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+            <Label layoutX="175.0" layoutY="34.0" styleClass="koulen" text="10 Cartes">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <!-- Remplacé l'ImageView par une VBox qui contiendra la carte de prévisualisation -->
+            <VBox fx:id="previewCard" layoutX="125.0" layoutY="96.0" prefHeight="255.0" prefWidth="175.0" />
+
+            <Label layoutX="332.0" layoutY="115.0" prefHeight="26.0" prefWidth="92.0" style="-fx-font-family: Bold;" styleClass="montserrat" text="Nom carte :" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="332.0" layoutY="143.0" prefHeight="26.0" prefWidth="46.0" style="-fx-font-family: Bold;" styleClass="montserrat" text="Date :" wrapText="true">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="332.0" layoutY="169.0" prefHeight="26.0" prefWidth="88.0" style="-fx-font-family: Bold;" styleClass="montserrat" text="Url image :" wrapText="true">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="332.0" layoutY="198.0" prefHeight="26.0" prefWidth="98.0" style="-fx-font-family: Bold;" styleClass="montserrat" text="Description :" wrapText="true">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Pane layoutX="322.0" layoutY="260.5" prefHeight="190.5" prefWidth="250.5" style="-fx-background-color: #E2B57B; -fx-border-radius: 12.5; -fx-background-radius: 12.5;">
+               <children>
+                  <TextArea fx:id="descArea" layoutX="8.0" layoutY="8.0" prefHeight="175.0" prefWidth="235.0" promptText="Ma description ..." />
+               </children>
+            </Pane>
+            <Button alignment="CENTER" layoutX="128.0" layoutY="369.5" mnemonicParsing="false" onAction="#addCard" prefHeight="34.0" prefWidth="175.0" rotate="0.0" scaleX="1.0" scaleY="1.0" style="-fx-border-radius: 5.85; -fx-background-radius: 5.85; -fx-background-color: #844B00;" textFill="#844b00" translateX="0.0" translateY="0.0">
+               <graphic>
+                  <Label prefHeight="33.5" rotate="0.0" scaleX="1.0" scaleY="1.0" styleClass="koulen" text=" AJOUTER CARTE" textFill="WHITE" translateX="0.0" translateY="0.0">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="21.5" pickOnBounds="true" preserveRatio="true" rotate="0.0" scaleX="1.0" scaleY="1.0" translateX="0.0" translateY="0.0">
+                           <image>
+                              <Image url="@../../../Croix.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets bottom="-5.0" top="-5.0" />
+                     </padding>
+                  </Label>
+               </graphic>
+            </Button>
+            <Line endX="75.0" layoutX="362.5" layoutY="50.0" startX="-50.0" strokeWidth="1.0" />
+            <TextField fx:id="NameField" layoutX="420.0" layoutY="114.0" prefHeight="25.0" prefWidth="150.0" promptText="Ma carte">
+               <font>
+                  <Font name="Montserrat Thin Regular" size="12.0" />
+               </font></TextField>
+            <TextField fx:id="dateField" layoutX="376.0" layoutY="142.0" prefHeight="25.0" prefWidth="150.0" promptText="2000" />
+            <TextField fx:id="urlField" layoutX="414.0" layoutY="168.0" prefHeight="25.0" prefWidth="150.0" promptText="https://" />
+            <TextField fx:id="titleDeckField" layoutX="304.0" layoutY="-4.0" prefHeight="57.0" prefWidth="175.0" promptText="Titre" styleClass="text-field-tittle">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </TextField>
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="480.5" prefWidth="358.5" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="14.0" layoutY="-2.0" styleClass="koulen" text="Liste des cartes">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Label>
+            <Button layoutX="27.5" layoutY="410.0" minHeight="45.5" mnemonicParsing="false" onAction="#saveCard" prefWidth="278.0" rotate="0.0" scaleX="1.0" scaleY="1.0" style="-fx-border-radius: 5.85; -fx-background-radius: 5.85; -fx-background-color: #844B00;" text="Button" textFill="#844b00" translateX="0.0" translateY="0.0">
+               <graphic>
+                  <Label alignment="CENTER" rotate="0.0" scaleX="1.0" scaleY="1.0" styleClass="koulen" text="SAUVEGARDER DECK" textFill="WHITE" translateX="0.0" translateY="0.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" rotate="0.0" scaleX="1.0" scaleY="1.0" translateX="0.0" translateY="0.0">
+                           <image>
+                              <Image url="@../../../save.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets bottom="-10.0" top="-10.0" />
+                     </padding>
+                  </Label>
+               </graphic>
+            </Button>
+            <ScrollPane hbarPolicy="NEVER" layoutX="0.0" layoutY="50.0" prefHeight="350.0" prefWidth="325.0">
+               <content>
+                  <GridPane fx:id="gridPane" alignment="CENTER" prefHeight="1250.0" prefWidth="326.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <padding>
+                        <Insets bottom="10.0" left="15.0" right="10.0" top="10.0" />
+                     </padding>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+   </right>
+   <center>
+      <Line endX="-50.0" endY="400.0" startX="-50.0" strokeWidth="1.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
