@@ -1,12 +1,8 @@
 package application.controller;
 
-import application.MainApplication;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
@@ -21,6 +17,8 @@ public class DeckPresentationController {
     @FXML
     private AnchorPane deck_presentation;
     private String selected;
+    private DeckLibController controller;
+
 
     public void setNomDeck(String Nom){
         TextNomDeck.setText(Nom);

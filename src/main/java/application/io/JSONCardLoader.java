@@ -3,8 +3,6 @@ package application.io;
 import application.controller.JSONManipulator;
 import application.model.Card;
 
-import java.util.Map;
-
 
 public class JSONCardLoader extends CardLoader {
 
@@ -18,14 +16,17 @@ public class JSONCardLoader extends CardLoader {
 
 	@Override
 	public void load() {
-
+		System.out.println("rentre dans load");
 		JSONManipulator json = new JSONManipulator("src/main/resources/com/example/timeline/json/decks.json");
-		int i=0;
-		for (Map<String, Object> card : json.getCards(deck)) {
+		System.out.println(json.getCards(deck));
+		for (int i =0; i<json.getCards(deck).size(); i++) {
+
 			Card tmpCard = new Card(json.getCardTitle(deck, i), json.getCardYear(deck, i), i, json.getCardImageURL(deck, i));
+			System.out.println(tmpCard);
 			addCard(tmpCard);
+
 			System.out.println("tmpCard = " + tmpCard);
-			i++;
+//			i++;
 		}
 	
 //		ObjectMapper objectMapper = new ObjectMapper();

@@ -16,10 +16,12 @@ import java.util.Map;
 
 public class JSONManipulator {
     private final String path;
-    Gson gson = new Gson();
+    private Gson gson = new Gson();
+    private Map<String, Map<String, Object>> data;
 
     public JSONManipulator(String path) {
         this.path = path;
+        loadData();
     }
 
     public Map<String, Object> getDeckInfo(String deckId) {
@@ -32,11 +34,29 @@ public class JSONManipulator {
             if (data == null || !data.containsKey(deckId)) {
                 return null;
             }
-            
+
             return data.get(deckId);
         } catch (Exception e) {
             e.printStackTrace();
             return null;
+        }
+    }
+    private void loadData() {
+        try (Reader reader = new FileReader(path)) {
+            Type type = new TypeToken<Map<String, Map<String, Object>>>() {}.getType();
+            data = gson.fromJson(reader, type);
+            if (data == null) data = new HashMap<>();
+        } catch (Exception e) {
+            e.printStackTrace();
+            data = new HashMap<>();
+        }
+    }
+
+    private void saveData() {
+        try (Writer writer = new FileWriter(path)) {
+            gson.toJson(data, writer);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
     
@@ -53,7 +73,9 @@ public class JSONManipulator {
     @SuppressWarnings("unchecked")
     public List<Map<String, Object>> getCards(String deckId) {
         Map<String, Object> deckInfo = getDeckInfo(deckId);
+        System.out.println(deckInfo+"\n"+ deckInfo.containsKey("cards"));
         if (deckInfo != null && deckInfo.containsKey("cards")) {
+            System.out.println("rentre dans le if getCards");
             return (List<Map<String, Object>>) deckInfo.get("cards");
         }
         return new ArrayList<>();
@@ -119,6 +141,7 @@ public class JSONManipulator {
             try (Writer writer = new FileWriter(path)) {
                 new GsonBuilder().setPrettyPrinting().create().toJson(data, writer);
             }
+            saveData();
             
         } catch (Exception e) {
             e.printStackTrace();
