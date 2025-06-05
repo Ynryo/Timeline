@@ -37,6 +37,7 @@ public class GameController {
     @FXML
     private Label titreDeck;
 
+
     private MainGame model;
     private final Pane placeholder = new Pane();
     private final List<CardViewOnHand> timelineCards = new ArrayList<>();
