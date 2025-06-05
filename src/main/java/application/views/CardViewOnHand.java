@@ -23,6 +23,7 @@ public class CardViewOnHand extends VBox {
 	private Label cardDate;
 	private Pane cardOutline;
 	private Parent root ;
+	private Card card;
 
 	public CardViewOnHand(CardOnHandController controller) {
 		super();
@@ -40,7 +41,8 @@ public class CardViewOnHand extends VBox {
 
 			this.getChildren().add(root);
 			controller.initView();
-
+// Initialisation de la carte
+			this.card = controller.getCard(); // Assuming `getCard()` method exists in CardOnHandController
 
 		} catch (IOException e) {
 			System.err.println("Problem while loading the card fxml");
@@ -63,7 +65,9 @@ public class CardViewOnHand extends VBox {
 	public Pane getCardOutline(){
 		return cardOutline;
 	}
-
+	public Card getCard() {
+		return card;
+	}
 	public void setCardImage(Image image) {
 		cardImage.setImage(image);
 	}

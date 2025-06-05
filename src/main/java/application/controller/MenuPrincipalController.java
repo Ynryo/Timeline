@@ -1,6 +1,7 @@
 package application.controller;
 
 import application.MainApplication;
+import application.model.MainGame;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -34,6 +35,8 @@ public class MenuPrincipalController {
     }
     @FXML
     void on1PlayerClicked(ActionEvent event) throws IOException {
+        MainGame.setPlayersNumber(1);
+
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/com/example/timeline/deck-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -42,6 +45,8 @@ public class MenuPrincipalController {
     }
     @FXML
     void on2PlayerClicked(ActionEvent event) throws IOException {
+        MainGame.setPlayersNumber(2);
+
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/com/example/timeline/deck-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -70,6 +75,5 @@ public class MenuPrincipalController {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
-
     }
 }

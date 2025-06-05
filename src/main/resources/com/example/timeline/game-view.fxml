@@ -24,6 +24,7 @@
             <children>
                <StackPane fx:id="drawZone" layoutX="821.0" layoutY="20.0" prefHeight="160.0" prefWidth="121.0" styleClass="draw-zone" />
                <HBox fx:id="handZone" alignment="CENTER" layoutX="313.0" layoutY="21.0" prefHeight="158.0" prefWidth="350.0" styleClass="hand" />
+               <Button layoutX="160.0" layoutY="22.0" maxHeight="50.0" maxWidth="121.0" minHeight="30.0" minWidth="81.0" mnemonicParsing="false" onAction="#onSwitchClicked" prefHeight="40.0" prefWidth="81.0" styleClass="game-button" text="switch" />
             </children></Pane>
       </bottom>
       <top>
@@ -38,7 +39,7 @@
       </center>
    </BorderPane>
 
-                                                                                 <Pane fx:id="dragLayer" pickOnBounds="false" prefWidth="960.0">
+                                                                                             <Pane fx:id="dragLayer" pickOnBounds="false" prefWidth="960.0">
       <children>
          <Label fx:id="titreDeck" layoutX="373.0" layoutY="7.0" styleClass="title" stylesheets="@style.css" text="Titre deck" />
          <Label fx:id="pointLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="405.0" layoutY="93.0" minHeight="99.0" prefHeight="99.0" prefWidth="176.0" styleClass="point-label" text="Points : ?">

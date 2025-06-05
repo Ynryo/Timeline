@@ -15,6 +15,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.BorderPane;
@@ -22,6 +23,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -46,24 +49,28 @@ public class GameController {
     private Label victoryLabel;
     private boolean isAnimationInProgress = false;
     private MainGame model;
+    private int nbPlayers;
     private int points;
     private boolean perfect;
     private final Pane placeholder = new Pane();
     private final List<CardViewOnHand> timelineCards = new ArrayList<>();
-
+    private List<Card> player1CurrentHand = new ArrayList<>();
+    private List<Card> player2CurrentHand = new ArrayList<>();
+    private boolean isPlayer1Active = true;
     public GameController() {
         super();
     }
 
     @FXML
     public void initialize() throws IOException {
+        System.out.println("joueurs:");
+        System.out.println(MainGame.getPlayersNumber());
 
         initUI();
         model = new MainGame();
         initUIFromModel();
 
     }
-
     private void initUI() {
         handZone.getChildren().clear();
     }
@@ -83,14 +90,97 @@ public class GameController {
     }
 
     private void displayPlayerHand() {
-        Hand hand = model.getPlayerHand();
+        handZone.getChildren().clear();  // Vider la zone de cartes avant de la mettre à jour
 
-        for (Card aCard : hand.getCards()) {
-            CardViewOnHand view = createViewCard(aCard, this);
-            view.setScaleX(1.2);
-            view.setScaleY(1.2);
-            handZone.getChildren().add(view);
+        // Mettre à jour les mains actuelles de chaque joueur
+        player1CurrentHand.clear();
+        player2CurrentHand.clear();
 
+        if (MainGame.getPlayersNumber() == 1) {
+            // Partie pour un joueur : afficher la main du joueur 1
+            Hand hand = model.getPlayer1Hand();  // Main du joueur 1
+            for (Card aCard : hand.getCards()) {
+                // Vérifier si la carte est déjà sur la timeline
+                if (!timelineCards.contains(aCard)) {
+                    player1CurrentHand.add(aCard);  // Ajouter à la main du joueur 1 si elle n'est pas sur la timeline
+                    CardViewOnHand view = createViewCard(aCard, this);
+                    view.setScaleX(1.2);
+                    view.setScaleY(1.2);
+                    handZone.getChildren().add(view);  // Ajouter la carte à handZone
+                }
+            }
+        } else {
+            // Partie pour deux joueurs : afficher la main du joueur 1
+            Hand hand1 = model.getPlayer1Hand();  // Main du joueur 1
+            for (Card aCard : hand1.getCards()) {
+                // Vérifier si la carte est déjà sur la timeline
+                if (!timelineCards.contains(aCard)) {
+                    player1CurrentHand.add(aCard);  // Ajouter à la main du joueur 1 si elle n'est pas sur la timeline
+                    CardViewOnHand view = createViewCard(aCard, this);
+                    view.setScaleX(1.2);
+                    view.setScaleY(1.2);
+                    handZone.getChildren().add(view);  // Ajouter la carte à handZone
+                }
+            }
+
+            // Partie pour deux joueurs : afficher la main du joueur 2
+            Hand hand2 = model.getPlayer2Hand();  // Main du joueur 2
+            for (Card aCard : hand2.getCards()) {
+                // Vérifier si la carte est déjà sur la timeline
+                if (!timelineCards.contains(aCard)) {
+                    player2CurrentHand.add(aCard);  // Ajouter à la main du joueur 2 si elle n'est pas sur la timeline
+                    CardViewOnHand view = createViewCard(aCard, this);
+                    view.setScaleX(1.2);
+                    view.setScaleY(1.2);
+                    handZone.getChildren().add(view);  // Ajouter la carte à handZone
+                }
+            }
+        }
+    }
+
+    @FXML
+    void onSwitchClicked(ActionEvent event) {
+        // Afficher le contenu des mains dans la console (pour déboguer)
+        System.out.println("Contenu de la main du Joueur 1:");
+        for (Card card : player1CurrentHand) {
+            System.out.println("Titre : " + card.getTitle() + ", Date : " + card.getDate() + ", Position : " + card.getPosition());
+        }
+
+        System.out.println("Contenu de la main du Joueur 2:");
+        for (Card card : player2CurrentHand) {
+            System.out.println("Titre : " + card.getTitle() + ", Date : " + card.getDate() + ", Position : " + card.getPosition());
+        }
+
+        if (MainGame.getPlayersNumber() == 2) {  // Vérifie qu'il y a bien 2 joueurs
+            handZone.getChildren().clear();  // Vider la zone de main avant de l'afficher
+
+            // Basculement entre la main du joueur 1 et du joueur 2
+            if (isPlayer1Active) {
+                // Afficher les cartes du joueur 2
+                for (Card aCard : player2CurrentHand) {
+                    // Si la carte n'a pas été placée sur la timeline, l'ajouter à handZone
+                    if (!timelineCards.contains(aCard)) {
+                        CardViewOnHand view = createViewCard(aCard, this);
+                        view.setScaleX(1.2);
+                        view.setScaleY(1.2);
+                        handZone.getChildren().add(view);  // Ajouter les cartes du joueur 2
+                    }
+                }
+            } else {
+                // Afficher les cartes du joueur 1
+                for (Card aCard : player1CurrentHand) {
+                    // Si la carte n'a pas été placée sur la timeline, l'ajouter à handZone
+                    if (!timelineCards.contains(aCard)) {
+                        CardViewOnHand view = createViewCard(aCard, this);
+                        view.setScaleX(1.2);
+                        view.setScaleY(1.2);
+                        handZone.getChildren().add(view);  // Ajouter les cartes du joueur 1
+                    }
+                }
+            }
+
+            // Basculer l'état entre joueur 1 et joueur 2
+            isPlayer1Active = !isPlayer1Active;  // Inverser l'état (passer du joueur 1 au joueur 2, ou inversement)
         }
     }
     @FXML
@@ -99,8 +189,18 @@ public class GameController {
     }
 
     @FXML
-    void onReglesClicked(ActionEvent event) {
+    void onReglesClicked(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/timeline/regles.fxml"));
+        Parent modalRoot = loader.load();
+        Stage modalStage = new Stage();
+        modalStage.setTitle("Règles");
+        modalStage.initModality(Modality.WINDOW_MODAL);
+        Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        modalStage.initOwner(primaryStage);
+        Scene modalScene = new Scene(modalRoot);
+        modalStage.setScene(modalScene);
 
+        modalStage.showAndWait();
     }
     private void displayDraw() {
         Deck deck = model.getDeck();
@@ -135,11 +235,21 @@ public class GameController {
     }
 
     private CardViewOnHand createViewCard(Card aCard, GameController aGameController) {
+        // Crée un contrôleur pour la carte
         CardOnHandController controller = new CardOnHandController(aCard, this);
+
+        // Crée une vue pour la carte
         CardViewOnHand view = new CardViewOnHand(controller);
-        if (aGameController.model.getPlayerHand().containsCard(aCard) && aCard != aGameController.model.getFirstCard()) {
-            makeDraggable(view);
+
+        // Vérifier si la carte appartient à l'un des joueurs
+        boolean isCardInPlayer1Hand = aGameController.model.getPlayer1Hand().containsCard(aCard);
+        boolean isCardInPlayer2Hand = aGameController.model.getPlayer2Hand().containsCard(aCard);
+
+        // Si la carte appartient à l'un des joueurs et ce n'est pas la première carte, rendre la carte draggable
+        if ((isCardInPlayer1Hand || isCardInPlayer2Hand) && aCard != aGameController.model.getFirstCard()) {
+            makeDraggable(view);  // Rendre la carte draggable
         }
+
         return view;
     }
 
@@ -348,47 +458,59 @@ public class GameController {
         fadeTransition.play();
     }
 
-    private void checkPlacement(CardViewOnHand card, int Index) {
+    private void checkPlacement(CardViewOnHand cardView, int Index) {
         if (isTimelineSorted()) {
-            colorOutline(card, "#88ff00");
+            colorOutline(cardView, "#88ff00");
 
-            if (handZone.getChildren().size() == 0) {
-                if (perfect) {
-                    points += 7;
-                    pointLabel.setText("Points : " + points);
-                    animateScoreIncrease("+2 +5", "#ffaa00");
-                } else {
-                    points += 2;
-                    pointLabel.setText("Points : " + points);
-                    animateScoreIncrease("+2", "#7bff00");
-                }
-                animateVictory();
+            // Récupérer l'objet Card à partir de CardViewOnHand
+            Card card = cardView.getCard();
 
-            } else {
-                points++;
-                pointLabel.setText("Points : " + points);
-                animateScoreIncrease("+1", "#7bff00");
+            // Retirer la carte de la main du joueur
+            Hand currentHand = isPlayer1Active ? model.getPlayer1Hand() : model.getPlayer2Hand();
+            currentHand.removeCard(card);  // Retirer la carte de la main
+
+            // Ajouter la carte à la timeline (dropZone)
+            timelineCards.add(Index, cardView);  // Ajouter à la timeline
+            dropZone.getChildren().add(cardView);  // Afficher la carte dans dropZone
+
+            System.out.println("Dates:");
+            for (CardViewOnHand cardDisplay : timelineCards) {
+                System.out.println(cardDisplay.getDate());
             }
+
+            // Animer la carte (par exemple, transition)
+            Bounds sceneBefore = cardView.localToScene(cardView.getBoundsInLocal());
+            TranslateTransition tt = new TranslateTransition(Duration.millis(120), cardView);
+            tt.setInterpolator(Interpolator.SPLINE(0.25, 0.1, 0.25, 1));
+            tt.setToX(0);
+            tt.setToY(0);
+            tt.setOnFinished(evt -> {
+                // Finaliser l'animation et appeler d'autres méthodes
+                updateCardOverlapping();
+                checkPlacement(cardView, Index);
+            });
+            tt.play();
         } else {
-            colorOutline(card, "#ff0004");
+            colorOutline(cardView, "#ff0004");
             points--;
             pointLabel.setText("Points : " + points);
             animateScoreIncrease("-1", "#ff0011");
             perfect = false;
+
             PauseTransition pause = new PauseTransition(Duration.millis(1000));
             PauseTransition pause2 = new PauseTransition(Duration.millis(500));
 
             pause.setOnFinished(event -> {
-                moveCardToCorrectPosition(card);
+                moveCardToCorrectPosition(cardView);
                 pause2.play();
             });
             pause2.setOnFinished(event -> {
                 drawCardInHand();
             });
             pause.play();
-
         }
-    }
+
+}
 
     private void moveCardToCorrectPosition(CardViewOnHand card) {
         int cardDate = Integer.parseInt(card.getDate());
