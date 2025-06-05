@@ -21,7 +21,6 @@ public class JSONManipulator {
 
     public JSONManipulator(String path) {
         this.path = path;
-        loadData();
     }
 
     public Map<String, Object> getDeckInfo(String deckId) {
@@ -41,24 +40,7 @@ public class JSONManipulator {
             return null;
         }
     }
-    private void loadData() {
-        try (Reader reader = new FileReader(path)) {
-            Type type = new TypeToken<Map<String, Map<String, Object>>>() {}.getType();
-            data = gson.fromJson(reader, type);
-            if (data == null) data = new HashMap<>();
-        } catch (Exception e) {
-            e.printStackTrace();
-            data = new HashMap<>();
-        }
-    }
 
-    private void saveData() {
-        try (Writer writer = new FileWriter(path)) {
-            gson.toJson(data, writer);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
     
     public String getDeckName(String deckId) {
         Map<String, Object> deckInfo = getDeckInfo(deckId);
@@ -141,7 +123,6 @@ public class JSONManipulator {
             try (Writer writer = new FileWriter(path)) {
                 new GsonBuilder().setPrettyPrinting().create().toJson(data, writer);
             }
-            saveData();
             
         } catch (Exception e) {
             e.printStackTrace();

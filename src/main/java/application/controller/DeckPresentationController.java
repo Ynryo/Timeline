@@ -19,8 +19,6 @@ public class DeckPresentationController {
     @FXML
     private ImageView firstCardImg;
 
-    @FXML
-    private AnchorPane deck_presentation;
     private String selected;
     private DeckLibController controller;
 
@@ -41,12 +39,12 @@ public class DeckPresentationController {
     public void setSelected(String selected) {
         this.selected = selected;
     }
+    public void setDecklibController(DeckLibController controller) {
+        this.controller = controller;
+    }
 
     @FXML
     void onClicked(MouseEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/com/example/timeline/deck-view.fxml"));
-        Parent root = fxmlLoader.load();
-        DeckLibController controller = fxmlLoader.getController();
         controller.setSelectedClicked(selected);
 //        deck_presentation.setEffect(null);
 //        deck_presentation.setScaleX(1.1);

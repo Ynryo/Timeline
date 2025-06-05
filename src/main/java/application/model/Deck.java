@@ -1,7 +1,7 @@
 package application.model;
 
 import application.io.CardLoader;
-import application.io.JSONCardLoader;
+import application.io.FAKECardLoader;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,13 +14,10 @@ public class Deck {
 
     public Deck(String deckId) {
         cards = new ArrayList<>();
+
         setup(deckId);
     }
-    public void ajouterCarte(Card carte) {
-        if (carte != null) {
-            cards.add(carte);
-        }
-    }
+
     private void setup(String deckId) {
 //        CardLoader loader = new JSONCardLoader(deckId);
         CardLoader loader = new FAKECardLoader();
@@ -29,7 +26,7 @@ public class Deck {
         title = loader.getTitle();
         Collections.shuffle(cards);
     }
-
+    public boolean isDrawEmpty() { return cards.isEmpty(); }
     public Card drawCard() {
         if (cards.isEmpty()) {
             return null;
@@ -40,24 +37,8 @@ public class Deck {
     public boolean hasMoreCards() {
         return !cards.isEmpty();
     }
-    public String getNom() {
-        return title;
-    }
-
-    public void setNom(String nom) {
-        this.title = nom;
-    }
-    public List<Card> getCards() {
-        return cards;
-    }
 
     public String getTitle() {
         return title;
-    }
-}
-
-    @Override
-    public String toString() {
-        return "Deck [title=" + title + ", number of cards=" + cards.size() + "]";
     }
 }
