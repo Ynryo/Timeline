@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="191.0" prefWidth="283.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.LeaveConfirmController">
+    <children>
+        <ImageView fitHeight="203.0" fitWidth="318.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/fdQuit.png" />
+            </image>
+        </ImageView>
+        <Label alignment="CENTER" layoutX="18.0" layoutY="29.0" prefHeight="35.0" prefWidth="282.0" text="Êtes-vous sûr de vouloir">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="78.0" layoutY="64.0" text="quitter" textFill="#ae2e2e">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="168.0" layoutY="64.0" text="le jeu ?">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <Button layoutX="39.0" layoutY="123.0" mnemonicParsing="false" onAction="#quitConfirmation" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: ae2e2e; -fx-background-radius: 5px;" text="Oui" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Button>
+        <Button layoutX="179.0" layoutY="123.0" mnemonicParsing="false" onAction="#quitCancel" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #515151; -fx-background-radius: 5px;" text="Non" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>

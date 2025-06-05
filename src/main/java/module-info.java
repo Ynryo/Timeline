@@ -11,4 +11,6 @@ module com.example.timeline {
     opens application to javafx.fxml;
     exports application.controller;
     opens application.controller to javafx.fxml;
+    exports application.utils;
+    opens application.utils to javafx.fxml;
 }
