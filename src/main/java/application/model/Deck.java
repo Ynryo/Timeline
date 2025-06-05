@@ -22,7 +22,8 @@ public class Deck {
         }
     }
     private void setup(String deckId) {
-        CardLoader loader = new JSONCardLoader(deckId);
+//        CardLoader loader = new JSONCardLoader(deckId);
+        CardLoader loader = new FAKECardLoader();
         loader.load();
         cards = loader.getCards();
         title = loader.getTitle();
@@ -53,11 +54,7 @@ public class Deck {
     public String getTitle() {
         return title;
     }
-
-
-    public void add(Card tmpCard) {
-        cards.add(tmpCard);
-    }
+}
 
     @Override
     public String toString() {

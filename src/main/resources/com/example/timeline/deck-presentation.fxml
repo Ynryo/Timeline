@@ -39,7 +39,7 @@
             <Font size="55.0" />
          </font>
       </Label>
-      <ImageView fitHeight="173.0" fitWidth="92.0" layoutX="169.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="firstCardImg" fitHeight="173.0" fitWidth="92.0" layoutX="169.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-size: cover;" />
       <Polygon fill="WHITE" layoutX="184.0" layoutY="98.0" points="41.86665344238281, 86.46665954589844, -14.666671752929688, 86.46665954589844, -14.666671752929688, -87.00000762939453" stroke="WHITE" strokeType="INSIDE" />
    </children>
 </AnchorPane>

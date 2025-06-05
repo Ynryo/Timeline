@@ -9,7 +9,7 @@ public class Card {
     private int position;
     private String urlImage;
 
-    public Card(String title, int date, int position, String urlImage) {
+    public Card(String title, String date, int position, String urlImage) {
         super();
         this.title = title;
         this.date = date;
@@ -29,10 +29,10 @@ public class Card {
         return title;
     }
 
-    public int getDate() {
+    public String getDate() {
         return date;
     }
-    public void setDate(int date) {
+    public void setDate(String date) {
         this.date = date;
     }
     public String getUrlImage() {

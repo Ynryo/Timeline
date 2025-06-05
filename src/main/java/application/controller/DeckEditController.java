@@ -1,10 +1,8 @@
 package application.controller;
 
-import application.MainApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
@@ -14,16 +12,16 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.List;
 
-public class DeckLibController {
+public class DeckEditController {
 
     @FXML
     private Button backBtn;
 
     @FXML
     private GridPane gridDeck;
-    private String selected = null;
 
-    public void initialize() {
+    @FXML
+    void initialize() {
         // Chargement des decks depuis le fichier JSON
         JSONManipulator json = new JSONManipulator("src/main/resources/com/example/timeline/json/decks.json");
         List<String> deckIds = json.getAllDeckIds();
@@ -45,10 +43,9 @@ public class DeckLibController {
 
 
                 // Configuration des données du deck
-                deckController.setDecklibController(this);
+//                deckController.setDecklibController(this);
                 deckController.setNomDeck(json.getDeckName(deckId));
                 deckController.setNbCartes(String.valueOf(json.getCards(deckId).size()));
-                deckController.setImgView(json.getCardImageURL(deckId, 0));
                 deckController.setSelected(deckId);
 
                 // Positionnement dans le GridPane
@@ -68,18 +65,6 @@ public class DeckLibController {
     }
 
     @FXML
-    public void onPlayClicked(ActionEvent event) throws IOException {
-        System.out.println("selected = " + selected);
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/com/example/timeline/game-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        GameController controller = fxmlLoader.getController();
-        controller.setSelectedDeck(selected);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
     void back(ActionEvent event) throws IOException {
         Stage stage = (Stage) backBtn.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/timeline/menu-principal-view.fxml"));
@@ -87,7 +72,4 @@ public class DeckLibController {
         stage.setScene(scene);
     }
 
-    public void setSelectedClicked(String selected) {
-        this.selected = selected;
-    }
 }

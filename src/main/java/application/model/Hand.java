@@ -6,20 +6,22 @@ import java.util.List;
 public class Hand {
 
 	private Card selectedCard;
-    private List<Card> cards;
-    
-    public Hand() {
-        cards = new ArrayList<>();
-        selectedCard = null;
-    }
-     
-    public void addCard(Card card) {
-    	cards.add(card);
-    }
-    
-    public boolean hasMoreCards() {
-    	return !cards.isEmpty();
-    }
+	private List<Card> cards;
+
+	public Hand() {
+		cards = new ArrayList<>();
+		selectedCard = null;
+	}
+	public boolean containsCard(Card card) {
+		return cards.contains(card);
+	}
+	public void addCard(Card card) {
+		cards.add(card);
+	}
+
+	public boolean hasMoreCards() {
+		return !cards.isEmpty();
+	}
 
 	public List<Card> getCards() {
 		return cards;
@@ -36,5 +38,6 @@ public class Hand {
 	public void removeCard(Card card) {
 		cards.remove(card);
 	}
-	
+
 }
+

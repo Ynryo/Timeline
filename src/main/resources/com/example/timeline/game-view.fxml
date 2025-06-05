@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.StackPane?>
-
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
 <StackPane stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.GameController">
 
    <BorderPane fx:id="cardPane" prefHeight="540.0" prefWidth="960.0" styleClass="background2" stylesheets="@style.css">
@@ -18,19 +15,72 @@
       <bottom>
          <Pane prefHeight="202.0" prefWidth="960.0" BorderPane.alignment="CENTER">
             <children>
-               <HBox fx:id="handZone" alignment="CENTER" layoutX="100.0" layoutY="62.0" prefHeight="140.0" prefWidth="760.0" styleClass="hand" />
+               <StackPane fx:id="drawZone" layoutX="821.0" layoutY="20.0" prefHeight="160.0" prefWidth="121.0" styleClass="draw-zone" />
+               <HBox fx:id="handZone" alignment="CENTER" layoutX="313.0" layoutY="21.0" prefHeight="158.0" prefWidth="350.0" styleClass="hand" />
             </children></Pane>
       </bottom>
       <top>
-         <Pane prefHeight="188.0" prefWidth="960.0" BorderPane.alignment="CENTER" />
+         <Pane prefHeight="188.0" prefWidth="960.0" BorderPane.alignment="CENTER">
+            <children>
+               <Button layoutX="18.0" layoutY="12.0" minHeight="53.0" minWidth="182.0" mnemonicParsing="false" onAction="#onQuitterClicked" prefHeight="53.0" prefWidth="182.0" styleClass="game-button" text="Quitter" />
+               <Button layoutX="131.0" layoutY="12.0" maxHeight="50.0" maxWidth="212.0" minHeight="30.0" minWidth="79.0" mnemonicParsing="false" onAction="#onReglesClicked" prefHeight="50.0" prefWidth="100.0" styleClass="game-button" text="regles" />
+            </children></Pane>
       </top>
       <center>
-         <HBox fx:id="dropZone" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="drop-box" BorderPane.alignment="CENTER" />
+         <HBox fx:id="dropZone" alignment="CENTER" prefHeight="100.0" prefWidth="641.0" styleClass="drop-box" BorderPane.alignment="CENTER" />
       </center>
    </BorderPane>
 
-                                       <Pane fx:id="dragLayer" pickOnBounds="false" prefWidth="960.0">
+                                                                                 <Pane fx:id="dragLayer" pickOnBounds="false" prefWidth="960.0">
       <children>
-         <Label fx:id="titreDeck" layoutX="373.0" layoutY="7.0" styleClass="titreDeck" stylesheets="@style.css" text="Titre deck" />
-      </children></Pane>
+         <Label fx:id="titreDeck" layoutX="373.0" layoutY="7.0" styleClass="title" stylesheets="@style.css" text="Titre deck" />
+         <Label fx:id="pointLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="405.0" layoutY="93.0" minHeight="99.0" prefHeight="99.0" prefWidth="176.0" styleClass="point-label" text="Points : ?">
+            <textFill>
+               <LinearGradient endX="0.5118483412322274" endY="1.0" startX="0.4928909952606635">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color red="0.4745098054409027" green="0.33725491166114807" blue="0.1568627506494522" />
+                        </color>
+                     </Stop>
+                     <Stop offset="0.006711409395973154">
+                        <color>
+                           <Color red="0.4745098054409027" green="0.33725491166114807" blue="0.1568627506494522" />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="0.6710526347160339" green="0.5731908082962036" blue="0.45358186960220337" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </LinearGradient>
+            </textFill>
+         </Label>
+         <Label fx:id="pointLabel1" alignment="CENTER" contentDisplay="CENTER" layoutX="795.0" layoutY="264.0" minHeight="99.0" prefHeight="99.0" prefWidth="176.0" styleClass="point-label" text="Pioche">
+            <textFill>
+               <LinearGradient endX="0.5118483412322274" endY="1.0" startX="0.4928909952606635">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color red="0.4745098054409027" green="0.33725491166114807" blue="0.1568627506494522" />
+                        </color>
+                     </Stop>
+                     <Stop offset="0.006711409395973154">
+                        <color>
+                           <Color red="0.4745098054409027" green="0.33725491166114807" blue="0.1568627506494522" />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="0.6710526347160339" green="0.5731908082962036" blue="0.45358186960220337" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </LinearGradient>
+            </textFill>
+         </Label>
+         <Label fx:id="victoryLabel" alignment="CENTER" layoutX="328.0" layoutY="289.0" prefHeight="140.0" prefWidth="324.0" styleClass="victory-label" text="VICTOIRE !" />
+      </children>
+   </Pane>
 </StackPane>

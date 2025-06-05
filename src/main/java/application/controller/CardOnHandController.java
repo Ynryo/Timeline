@@ -1,7 +1,7 @@
 package application.controller;
 
 import application.model.Card;
-import application.util.ImageManager;
+import application.utils.ImageManager;
 import application.views.CardViewOnHand;
 
 public class CardOnHandController {
@@ -23,7 +23,7 @@ public class CardOnHandController {
 		view = cardViewOnHand;
 	}
 
-	public int getDateFromController(){
+	public String getDateFromController(){
 		return controlledCard.getDate();
 	}
 

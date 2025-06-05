@@ -2,6 +2,8 @@ package application.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
@@ -15,6 +17,9 @@ public class DeckPresentationController {
     private Label TextNomDeck;
 
     @FXML
+    private ImageView firstCardImg;
+
+    @FXML
     private AnchorPane deck_presentation;
     private String selected;
     private DeckLibController controller;
@@ -26,6 +31,11 @@ public class DeckPresentationController {
 
     public void setNbCartes(String NBcartes){
         TextNbCartes.setText(NBcartes);
+    }
+
+    public void setImgView(String URLImage) {
+        Image image = new Image(URLImage);
+        firstCardImg.setImage(image);
     }
 
     public void setSelected(String selected) {
