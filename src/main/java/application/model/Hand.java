@@ -12,7 +12,9 @@ public class Hand {
         cards = new ArrayList<>();
         selectedCard = null;
     }
-     
+	public boolean containsCard(Card card) {
+		return cards.contains(card);
+	}
     public void addCard(Card card) {
     	cards.add(card);
     }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="card_vbox" alignment="TOP_CENTER" fillWidth="false" maxHeight="90.0" maxWidth="70.0" minHeight="100.0" minWidth="70.0" prefHeight="90.0" prefWidth="70.0" styleClass="container" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="116.0" prefWidth="66.0">
+         <children>
+            <ImageView fx:id="card_img" fitHeight="79.0" fitWidth="62.0" layoutX="2.0" layoutY="2.0" pickOnBounds="true" styleClass="card-image" />
+            <Pane layoutX="3.0" layoutY="3.0" prefHeight="90.0" prefWidth="60.0" styleClass="background-unknown" />
+            <Pane fx:id="cardOutline" layoutX="-2.0" layoutY="-2.0" prefHeight="100.0" prefWidth="70.0" styleClass="card-outline" />
+            <Label alignment="CENTER" layoutX="-2.0" layoutY="-69.0" prefHeight="234.0" prefWidth="70.0" styleClass="unknown-label" text="?" />
+         </children>
+      </Pane>
+   </children>
+</VBox>

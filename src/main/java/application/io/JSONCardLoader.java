@@ -1,15 +1,14 @@
 package application.io;
 
-import java.io.File;
-import java.io.IOException;
-
+import application.model.Card;
+import application.pojo.CardPOJO;
+import application.pojo.CollectionPOJO;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import application.model.Card;
-import application.pojo.CardPOJO;
-import application.pojo.CollectionPOJO;
+import java.io.File;
+import java.io.IOException;
 
 
 public class JSONCardLoader extends CardLoader {

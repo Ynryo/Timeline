@@ -30,7 +30,7 @@
                <children>
                
                                               <!-- Année -->
-                   <Label fx:id="card_date" alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="-9.0" maxHeight="120.0" minHeight="17.0" prefHeight="31.0" prefWidth="42.0" styleClass="year" text="Date">
+                   <Label fx:id="card_date" alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="-6.0" maxHeight="120.0" minHeight="17.0" prefHeight="28.0" prefWidth="42.0" styleClass="year" text="??">
                        <font>
                            <Font name="Arial Bold" size="16" />
                        </font>

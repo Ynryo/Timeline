@@ -1,11 +1,11 @@
 package application.model;
 
+import application.io.CardLoader;
+import application.io.FAKECardLoader;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import application.io.CardLoader;
-import application.io.FAKECardLoader;
 
 public class Deck {
 
@@ -25,7 +25,7 @@ public class Deck {
         title = loader.getTitle();
         Collections.shuffle(cards);
     }
-
+    public boolean isDrawEmpty() { return cards.isEmpty(); }
     public Card drawCard() {
         if (cards.isEmpty()) {
             return null;

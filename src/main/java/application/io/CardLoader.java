@@ -1,9 +1,9 @@
 package application.io;
 
+import application.model.Card;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import application.model.Card;
 
 public abstract class CardLoader {
 
