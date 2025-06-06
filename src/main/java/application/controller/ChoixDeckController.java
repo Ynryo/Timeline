@@ -106,6 +106,13 @@ public class ChoixDeckController {
         stage.show();
     }
 
+    @FXML
+    void openEditDeck(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/timeline/edit-deck-view.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(fxmlLoader.load()));
+    }
+
     public void back(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/timeline/menu-principal-view.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

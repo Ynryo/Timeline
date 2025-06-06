@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 /* Main Background and Layout */
 .deck-background {
-    -fx-background-image: url("/background.png");
+    -fx-background-image: url("../images/background3.png");
     -fx-background-size: cover;
 }
 

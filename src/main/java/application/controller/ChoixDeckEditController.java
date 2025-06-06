@@ -1,25 +1,23 @@
-//package application.controller;
-//
-//import javafx.event.ActionEvent;
-//import javafx.fxml.FXML;
-//import javafx.fxml.FXMLLoader;
-//import javafx.scene.Scene;
-//import javafx.scene.control.Button;
-//import javafx.scene.layout.AnchorPane;
-//import javafx.scene.layout.GridPane;
-//import javafx.stage.Stage;
-//
-//import java.io.IOException;
-//import java.util.List;
-//
-//public class DeckEditController {
-//
-//    @FXML
-//    private Button backBtn;
-//
-//    @FXML
-//    private GridPane gridDeck;
-//
+package application.controller;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+
+public class ChoixDeckEditController {
+
+    @FXML
+    private Button backBtn;
+
+    @FXML
+    private GridPane gridDeck;
+
 //    @FXML
 //    void initialize() {
 //        // Chargement des decks depuis le fichier JSON
@@ -62,13 +60,13 @@
 //            e.printStackTrace();
 //        }
 //    }
-//
-//    @FXML
-//    void back(ActionEvent event) throws IOException {
-//        Stage stage = (Stage) backBtn.getScene().getWindow();
-//        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/timeline/menu-principal-view.fxml"));
-//        Scene scene = new Scene(fxmlLoader.load());
-//        stage.setScene(scene);
-//    }
-//
-//}
+
+    @FXML
+    void back(ActionEvent event) throws IOException {
+        Stage stage = (Stage) backBtn.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/timeline/menu-principal-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+    }
+
+}

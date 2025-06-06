@@ -1,46 +1,57 @@
-//package application.controller;
-//
-//import application.model.Card;
-//import application.model.Coord;
-//import application.model.Deck;
-//import javafx.fxml.FXML;
-//import javafx.fxml.FXMLLoader;
-//import javafx.scene.Node;
-//import javafx.scene.Parent;
-//import javafx.scene.Scene;
-//import javafx.scene.control.TextField;
-//import javafx.scene.control.TextArea;
-//import javafx.scene.layout.AnchorPane;
-//import javafx.scene.layout.GridPane;
-//import javafx.scene.control.Button;
-//import javafx.event.ActionEvent;
-//import javafx.stage.Stage;
-//
-//import java.io.IOException;
-//import java.util.HashMap;
-//import java.util.List;
-//import java.util.Map;
-//
-//public class EditDeckController {
+package application.controller;
+
+import application.model.Card;
+import application.model.Coord;
+import application.model.Deck;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+public class EditDeckController {
 // TODO: Modifier avec la bonne methode
 
-//    @FXML
-//    private GridPane gridCards;
-//    @FXML
-//    private TextField nameField, dateField, urlField, titleDeckField;
-//    @FXML
-//    private TextArea descArea;
-//    @FXML
-//    private Button addCardButton;
-//
-//    private Deck deckActuel;
-//    private Map<Coord, Card> coordToCard = new HashMap<>();
-//    private Coord selectedCoord = null;
-//    private int maxColumns = 2;
-//    private Map<application.model.Coord, String> mapAnchorToController = new HashMap<>();
-//    Coord coordSelected;
-//    private String nomDeckAEditer;
-//
+    @FXML
+    private GridPane gridCards;
+    @FXML
+    private TextField nameField, dateField, urlField, titleDeckField;
+    @FXML
+    private TextArea descArea;
+    @FXML
+    private Button addCardButton;
+
+    private Deck deckActuel;
+    private Map<Coord, Card> coordToCard = new HashMap<>();
+    private Coord selectedCoord = null;
+    private int maxColumns = 2;
+    private Map<application.model.Coord, String> mapAnchorToController = new HashMap<>();
+    Coord coordSelected;
+    private String nomDeckAEditer;
+
+    public void close(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/timeline/menu-principal-view.fxml"));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(loader.load()));
+    }
+
+    public void addCard(ActionEvent actionEvent) {
+
+    }
+
+    public void saveCard(ActionEvent actionEvent) {
+
+    }
+
 //    @FXML
 //    void onEditDeckClicked(ActionEvent event) throws IOException {
 //        String nomDeckSelectionne = mapAnchorToController.get(coordSelected);
@@ -182,4 +193,4 @@
 //            return 31 * row + column;
 //        }
 //    }
-//}
+}

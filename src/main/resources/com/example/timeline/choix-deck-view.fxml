@@ -11,7 +11,7 @@
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button alignment="CENTER" contentDisplay="CENTER" minHeight="48.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="200.0" styleClass="menu-button" text="+ AJOUTER DECK" textAlignment="CENTER" textFill="#fffbfb">
+                  <Button alignment="CENTER" contentDisplay="CENTER" minHeight="48.0" mnemonicParsing="false" onAction="#openEditDeck" prefHeight="48.0" prefWidth="200.0" styleClass="menu-button" text="+ AJOUTER DECK" textAlignment="CENTER" textFill="#fffbfb">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
