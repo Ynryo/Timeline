@@ -13,28 +13,37 @@ import java.io.IOException;
 
 public class JSONCardLoader extends CardLoader {
 
-	private static final String PATH = "data.json";
-	private String selected;
-
-	public JSONCardLoader(String selected) {
-		this.selected = selected;
-	}
+	private static final String PATH = "src/main/resources/com/example/timeline/json/decks.json";
 
 	@Override
-	public void load() {
-
+	public void load(String nameDeck) {
 		ObjectMapper objectMapper = new ObjectMapper();
 		objectMapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
 
-		CollectionPOJO result;
 		try {
 			File file = new File(PATH);
-			result = objectMapper.readValue(file, CollectionPOJO.class);
+
+			CollectionPOJO[] allDecks = objectMapper.readValue(file, CollectionPOJO[].class);
+
+			CollectionPOJO result = null;
+			for (CollectionPOJO deck : allDecks) {
+				if (deck.name.equalsIgnoreCase(nameDeck)) {
+					result = deck;
+					break;
+				}
+			}
+
+			if (result == null) {
+				System.err.println("Deck non trouvé : " + nameDeck);
+				return;
+			}
 
 			setTitle(result.name);
 
-			for (CardPOJO cardP: result.cards) {
-				addCard(new Card(cardP)); 			}
+			int pos = 0;
+			for (CardPOJO cardP : result.cards) {
+				addCard(new Card(cardP));
+			}
 
 		} catch (JsonProcessingException e) {
 			System.err.println("Probleme avec le json");
@@ -42,7 +51,6 @@ public class JSONCardLoader extends CardLoader {
 			System.err.println("Probleme avec le fichier des données");
 			e.printStackTrace();
 		}
-
 	}
 
 }

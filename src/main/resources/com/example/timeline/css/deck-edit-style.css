@@ -1,0 +1,420 @@
+@import url('https://fonts.googleapis.com/css?family=Koulen');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+/* Main Background and Layout */
+.deck-background {
+    -fx-background-image: url("/background.png");
+    -fx-background-size: cover;
+}
+
+.montserrat{
+    -fx-font-family: 'Montserrat';
+}
+
+.koulen {
+    -fx-font-family: 'Koulen';
+}
+
+.left-panel {
+    -fx-background-color: #e3caa3;
+    -fx-background-radius: 0px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0);
+}
+
+.pane{
+    -fx-border-radius: 25px;
+
+}
+
+.right-panel {
+    -fx-background-color: #e9d6b8;
+}
+
+/* Titles and Labels */
+.title-label {
+    -fx-font-family: 'Arial Black';
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2d2d2d;
+}
+
+.subtitle-label {
+    -fx-font-family: 'Arial';
+    -fx-font-size: 14px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #4d4d4d;
+}
+
+.section-title {
+    -fx-font-family: 'Arial Black';
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2d2d2d;
+}
+
+.detail-label {
+    -fx-font-family: 'Arial';
+    -fx-font-size: 14px;
+    -fx-text-fill: #2d2d2d;
+    -fx-font-weight: normal;
+}
+
+.description-text {
+    -fx-font-family: 'Arial';
+    -fx-font-size: 14px;
+    -fx-text-fill: #4d4d4d;
+    -fx-wrap-text: true;
+}
+
+/* Card Styles */
+.card-preview {
+    -fx-padding: 10px;
+    -fx-alignment: center;
+}
+
+.card-frame {
+    -fx-background-color: black;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 5, 0, 0, 0);
+}
+
+.card-info-container {
+    -fx-padding: 10px;
+    -fx-background-color: linear-gradient(from 0% 70% to 0% 100%, transparent, rgba(0,0,0,0.7));
+    -fx-alignment: bottom-left;
+}
+
+.card-year {
+    -fx-font-family: 'Arial';
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffe500;
+    -fx-padding: 5px 0 0 5px;
+    -fx-alignment: top-left;
+}
+
+.card-title {
+    -fx-font-family: 'Arial';
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-padding: 0 0 5px 5px;
+}
+
+.card-title-container {
+    -fx-background-color: linear-gradient(from 0% 70% to 0% 100%, transparent, rgba(0,0,0,0.7));
+    -fx-alignment: bottom-center;
+}
+
+.card-icon {
+    -fx-alignment: top-left;
+    -fx-translate-x: -55;
+    -fx-translate-y: -55;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 2, 0, 0, 0);
+}
+
+/* Buttons - Solution renforcée pour éliminer toutes les animations */
+.button {
+    -fx-translate-x: 0 !important;
+    -fx-translate-y: 0 !important;
+    -fx-scale-x: 1 !important;
+    -fx-scale-y: 1 !important;
+    -fx-rotate: 0 !important;
+}
+
+.button:hover {
+    -fx-translate-x: 0 !important;
+    -fx-translate-y: 0 !important;
+    -fx-scale-x: 1 !important;
+    -fx-scale-y: 1 !important;
+    -fx-rotate: 0 !important;
+}
+
+.button:pressed {
+    -fx-translate-x: 0 !important;
+    -fx-translate-y: 0 !important;
+    -fx-scale-x: 1 !important;
+    -fx-scale-y: 1 !important;
+    -fx-rotate: 0 !important;
+}
+
+.button:focused {
+    -fx-translate-x: 0 !important;
+    -fx-translate-y: 0 !important;
+    -fx-scale-x: 1 !important;
+    -fx-scale-y: 1 !important;
+    -fx-rotate: 0 !important;
+}
+
+/* Empêcher TOUTES les transformations sur TOUS les éléments internes */
+.button *,
+.button > *,
+.button .graphic,
+.button .label,
+.button .image-view,
+.button .text,
+.button Label,
+.button ImageView {
+    -fx-translate-x: 0 !important;
+    -fx-translate-y: 0 !important;
+    -fx-scale-x: 1 !important;
+    -fx-scale-y: 1 !important;
+    -fx-rotate: 0 !important;
+}
+
+.button:hover *,
+.button:hover > *,
+.button:hover .graphic,
+.button:hover .label,
+.button:hover .image-view,
+.button:hover .text,
+.button:hover Label,
+.button:hover ImageView {
+    -fx-translate-x: 0 !important;
+    -fx-translate-y: 0 !important;
+    -fx-scale-x: 1 !important;
+    -fx-scale-y: 1 !important;
+    -fx-rotate: 0 !important;
+}
+
+.button:pressed *,
+.button:pressed > *,
+.button:pressed .graphic,
+.button:pressed .label,
+.button:pressed .image-view,
+.button:pressed .text,
+.button:pressed Label,
+.button:pressed ImageView {
+    -fx-translate-x: 0 !important;
+    -fx-translate-y: 0 !important;
+    -fx-scale-x: 1 !important;
+    -fx-scale-y: 1 !important;
+    -fx-rotate: 0 !important;
+}
+
+.button:focused *,
+.button:focused > *,
+.button:focused .graphic,
+.button:focused .label,
+.button:focused .image-view,
+.button:focused .text,
+.button:focused Label,
+.button:focused ImageView {
+    -fx-translate-x: 0 !important;
+    -fx-translate-y: 0 !important;
+    -fx-scale-x: 1 !important;
+    -fx-scale-y: 1 !important;
+    -fx-rotate: 0 !important;
+}
+
+.back-button {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-translate-x: 0 !important;
+    -fx-translate-y: 0 !important;
+    -fx-scale-x: 1 !important;
+    -fx-scale-y: 1 !important;
+}
+
+.back-button:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 5, 0, 0, 0);
+    -fx-translate-x: 0 !important;
+    -fx-translate-y: 0 !important;
+    -fx-scale-x: 1 !important;
+    -fx-scale-y: 1 !important;
+}
+
+.back-button *,
+.back-button:hover * {
+    -fx-translate-x: 0 !important;
+    -fx-translate-y: 0 !important;
+    -fx-scale-x: 1 !important;
+    -fx-scale-y: 1 !important;
+}
+
+.add-card-button {
+    -fx-background-color: #c49c68;
+    -fx-text-fill: white;
+    -fx-font-family: 'Arial';
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+    -fx-translate-x: 0 !important;
+    -fx-translate-y: 0 !important;
+    -fx-scale-x: 1 !important;
+    -fx-scale-y: 1 !important;
+}
+
+.add-card-button:hover {
+    -fx-background-color: #b38d5d;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 5, 0, 0, 0);
+    -fx-translate-x: 0 !important;
+    -fx-translate-y: 0 !important;
+    -fx-scale-x: 1 !important;
+    -fx-scale-y: 1 !important;
+}
+
+.text-area {
+    -fx-font-family: 'Montserrat';
+    -fx-background-color: transparent;
+    -fx-control-inner-background: transparent;
+    -fx-font-size: 14px;
+    -fx-text-fill: black;
+    -fx-prompt-text-fill: #666666;
+}
+
+.text-field {
+    -fx-font-family: 'Montserrat';
+    -fx-background-color: transparent;
+    -fx-control-inner-background: transparent;
+    -fx-font-size: 14px;
+    -fx-text-fill: black;
+    -fx-prompt-text-fill: #666666;
+    -fx-padding: 5px;
+}
+
+.text-field-tittle {
+    -fx-font-family: 'Koulen';
+    -fx-background-color: transparent;
+    -fx-control-inner-background: transparent;
+    -fx-font-size: 32px;
+    -fx-text-fill: black;
+    -fx-prompt-text-fill: #666666;
+    -fx-padding: 5px;
+}
+
+.text-field:focused {
+    -fx-prompt-text-fill: #999999;
+}
+
+.add-card-button *,
+.add-card-button:hover * {
+    -fx-translate-x: 0 !important;
+    -fx-translate-y: 0 !important;
+    -fx-scale-x: 1 !important;
+    -fx-scale-y: 1 !important;
+}
+
+.modify-button {
+    -fx-background-color: #c42626;
+    -fx-text-fill: white;
+    -fx-font-family: 'Arial';
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 5px 10px;
+    -fx-background-radius: 0 0 5px 5px;
+    -fx-cursor: hand;
+    -fx-alignment: center;
+    -fx-content-display: left;
+    -fx-translate-x: 0 !important;
+    -fx-translate-y: 0 !important;
+    -fx-scale-x: 1 !important;
+    -fx-scale-y: 1 !important;
+}
+
+.modify-button:hover {
+    -fx-background-color: #a61e1e;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 5, 0, 0, 0);
+    -fx-translate-x: 0 !important;
+    -fx-translate-y: 0 !important;
+    -fx-scale-x: 1 !important;
+    -fx-scale-y: 1 !important;
+}
+
+.modify-button *,
+.modify-button:hover * {
+    -fx-translate-x: 0 !important;
+    -fx-translate-y: 0 !important;
+    -fx-scale-x: 1 !important;
+    -fx-scale-y: 1 !important;
+}
+
+.save-button {
+    -fx-background-color: #956b39;
+    -fx-text-fill: white;
+    -fx-font-family: 'Arial';
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 15px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+    -fx-content-display: right;
+    -fx-graphic-text-gap: 10;
+    -fx-translate-x: 0 !important;
+    -fx-translate-y: 0 !important;
+    -fx-scale-x: 1 !important;
+    -fx-scale-y: 1 !important;
+}
+
+.save-button:hover {
+    -fx-background-color: #7d5b30;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 5, 0, 0, 0);
+    -fx-translate-x: 0 !important;
+    -fx-translate-y: 0 !important;
+    -fx-scale-x: 1 !important;
+    -fx-scale-y: 1 !important;
+}
+
+.save-button *,
+.save-button:hover * {
+    -fx-translate-x: 0 !important;
+    -fx-translate-y: 0 !important;
+    -fx-scale-x: 1 !important;
+    -fx-scale-y: 1 !important;
+}
+
+/* Card Detail Panel */
+.card-details-pane {
+    -fx-background-color: rgba(255, 255, 255, 0.3);
+    -fx-background-radius: 5px;
+    -fx-padding: 15px;
+}
+
+/* Card Grid Layout */
+.cards-container {
+    -fx-alignment: center;
+    -fx-hgap: 15;
+    -fx-vgap: 15;
+}
+
+.cards-scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.cards-scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.card-item {
+    -fx-spacing: 0;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 5, 0, 0, 0);
+}
+
+/* ScrollPane Styling */
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical {
+    -fx-background-color: #e3caa3;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #956b39;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: #e3caa3;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-background-color: #956b39;
+}

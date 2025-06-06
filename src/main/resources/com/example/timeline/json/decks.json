@@ -1,90 +1,363 @@
-{
-  "consoles": {
-    "name": "Les consoles vidéos",
-    "description": "Deck sur les consoles de jeux",
+[
+  {
+    "name": "Les consoles videos",
     "cards": [
-      {"title": "Nintendo Switch 2", "year": 2025, "imageURL": "https://www.lycee3vallees.fr/wp-content/uploads/2025/06/la-nintendo-switch-2-devoile-une-fonctionnalite-secrete-bien-eloignee-de-vos-attentes.jpg", "description": "La future génération de la Nintendo Switch."},
-      {"title": "PSP", "year": 2008, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "La console portable de Sony qui a marqué les années 2000."},
-      {"title": "Wii", "year": 2006, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "La console à détection de mouvement de Nintendo."},
-      {"title": "PlayStation 5", "year": 2020, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Dernière génération de console de salon Sony."},
-      {"title": "Xbox Series X", "year": 2020, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Console puissante de Microsoft, axée sur la performance."},
-      {"title": "Nintendo DS", "year": 2004, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "La portable double écran qui a cartonné chez Nintendo."},
-      {"title": "Game Boy", "year": 1989, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "La console portable iconique de Nintendo."},
-      {"title": "PlayStation 2", "year": 2000, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "La console la plus vendue de tous les temps."},
-      {"title": "Xbox 360", "year": 2005, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "La console qui a démocratisé le jeu en ligne sur console."},
-      {"title": "Super Nintendo (SNES)", "year": 1990, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "La console 16 bits légendaire de Nintendo."},
-      {"title": "Sega Mega Drive", "year": 1988, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "La console phare de Sega dans les années 90."},
-      {"title": "PlayStation 1", "year": 1994, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "La première console de salon de Sony."},
-      {"title": "Nintendo 64", "year": 1996, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "La première console Nintendo en 3D."},
-      {"title": "Dreamcast", "year": 1998, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "La dernière console de Sega, en avance sur son temps."},
-      {"title": "Atari 2600", "year": 1977, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "La pionnière des consoles de salon à cartouches."}
+      {
+        "title": "Nintendo Switch 2",
+        "year": 2025,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "La future génération de la Nintendo Switch."
+      },
+      {
+        "title": "PSP",
+        "year": 2008,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "La console portable de Sony qui a marqué les années 2000."
+      },
+      {
+        "title": "Wii",
+        "year": 2006,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "La console à détection de mouvement de Nintendo."
+      },
+      {
+        "title": "PlayStation 5",
+        "year": 2020,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Dernière génération de console de salon Sony."
+      },
+      {
+        "title": "Xbox Series X",
+        "year": 2020,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Console puissante de Microsoft, axée sur la performance."
+      },
+      {
+        "title": "Nintendo DS",
+        "year": 2004,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "La portable double écran qui a cartonné chez Nintendo."
+      },
+      {
+        "title": "Game Boy",
+        "year": 1989,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "La console portable iconique de Nintendo."
+      },
+      {
+        "title": "PlayStation 2",
+        "year": 2000,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "La console la plus vendue de tous les temps."
+      },
+      {
+        "title": "Xbox 360",
+        "year": 2005,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "La console qui a démocratisé le jeu en ligne sur console."
+      },
+      {
+        "title": "Super Nintendo (SNES)",
+        "year": 1990,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "La console 16 bits légendaire de Nintendo."
+      },
+      {
+        "title": "Sega Mega Drive",
+        "year": 1988,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "La console phare de Sega dans les années 90."
+      },
+      {
+        "title": "PlayStation 1",
+        "year": 1994,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "La première console de salon de Sony."
+      },
+      {
+        "title": "Nintendo 64",
+        "year": 1996,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "La première console Nintendo en 3D."
+      },
+      {
+        "title": "Dreamcast",
+        "year": 1998,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "La dernière console de Sega, en avance sur son temps."
+      },
+      {
+        "title": "Atari 2600",
+        "year": 1977,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "La pionnière des consoles de salon à cartouches."
+      }
     ]
   },
-  "alcool": {
-    "name": "Les boissons alcoolisées",
-    "description": "Deck sur les différents types d'alcools, cocktails célèbres et faits insolites.",
+  {
+    "name": "Les boissons alcoolisees",
     "cards": [
-      { "title": "Bière", "year": -4000, "imageURL": "https://cache.larvf.com/data/photo/w1200_h630_ci/6w/quels-pays-consomment-le-plus-de-biere.jpg", "description": "L'une des plus anciennes boissons alcoolisées, brassée à partir de céréales." },
-      { "title": "Vin", "year": -6000, "imageURL": "https://vinoclub.fr/nos-coffrets/198-coffret-3-grands-vins-rouges.html", "description": "Boisson fermentée à base de raisin, pilier de nombreuses cultures." },
-      { "title": "Whisky", "year": 1400, "imageURL": "https://whisky-augustericouard.fr/produit/whisky-normand-single-malt-fermier-et-artisanal/", "description": "Spiritueux distillé à partir de céréales, originaire d'Écosse et d'Irlande." },
-      { "title": "Vodka", "year": 1500, "imageURL": "https://www.greygoose.com/fr-fr/heritage.html", "description": "Alcool neutre emblématique de Russie et de Pologne." },
-      { "title": "Rhum", "year": 1600, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Distillé à partir de la canne à sucre, star des Caraïbes." },
-      { "title": "Gin", "year": 1700, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Alcool aromatisé aux baies de genièvre, base de nombreux cocktails." },
-      { "title": "Tequila", "year": 1700, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Spiritueux mexicain à base d'agave bleu." },
-      { "title": "Absinthe", "year": 1800, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Alcool fort aux herbes, célèbre pour son histoire controversée." },
-      { "title": "Margarita", "year": 1938, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Cocktail mexicain à base de tequila, citron vert et triple sec." },
-      { "title": "Long Island Iced Tea", "year": 1972, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Cocktail ultra-fort mélangeant plusieurs alcools clairs." },
-      { "title": "Bacardi 151", "year": 1963, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Rhum légendaire à 75,5% d’alcool, aujourd'hui arrêté." },
-      { "title": "Schorschbock 43", "year": 2011, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "La bière la plus forte du monde, à 43% d’alcool." },
-      { "title": "Saké", "year": 700, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Boisson fermentée japonaise à base de riz." },
-      { "title": "Cider", "year": -55, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Boisson à base de pommes, très populaire en Bretagne et Normandie." },
-      { "title": "Mead (Hydromel)", "year": -7000, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Boisson fermentée à base de miel, l'une des plus anciennes au monde." }
+      {
+        "title": "Bière",
+        "year": -4000,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "L'une des plus anciennes boissons alcoolisées, brassée à partir de céréales."
+      },
+      {
+        "title": "Vin",
+        "year": -6000,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Boisson fermentée à base de raisin, pilier de nombreuses cultures."
+      },
+      {
+        "title": "Whisky",
+        "year": 1400,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Spiritueux distillé à partir de céréales, originaire d'Écosse et d'Irlande."
+      },
+      {
+        "title": "Vodka",
+        "year": 1500,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Alcool neutre emblématique de Russie et de Pologne."
+      },
+      {
+        "title": "Rhum",
+        "year": 1600,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Distillé à partir de la canne à sucre, star des Caraïbes."
+      },
+      {
+        "title": "Gin",
+        "year": 1700,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Alcool aromatisé aux baies de genièvre, base de nombreux cocktails."
+      },
+      {
+        "title": "Tequila",
+        "year": 1700,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Spiritueux mexicain à base d'agave bleu."
+      },
+      {
+        "title": "Absinthe",
+        "year": 1800,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Alcool fort aux herbes, célèbre pour son histoire controversée."
+      },
+      {
+        "title": "Margarita",
+        "year": 1938,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Cocktail mexicain à base de tequila, citron vert et triple sec."
+      },
+      {
+        "title": "Long Island Iced Tea",
+        "year": 1972,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Cocktail ultra-fort mélangeant plusieurs alcools clairs."
+      },
+      {
+        "title": "Bacardi 151",
+        "year": 1963,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Rhum légendaire à 75,5% d’alcool, aujourd'hui arrêté."
+      },
+      {
+        "title": "Schorschbock 43",
+        "year": 2011,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "La bière la plus forte du monde, à 43% d’alcool."
+      },
+      {
+        "title": "Saké",
+        "year": 700,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Boisson fermentée japonaise à base de riz."
+      },
+      {
+        "title": "Cider",
+        "year": -55,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Boisson à base de pommes, très populaire en Bretagne et Normandie."
+      },
+      {
+        "title": "Mead (Hydromel)",
+        "year": -7000,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Boisson fermentée à base de miel, l'une des plus anciennes au monde."
+      }
     ]
   },
-
-  "prog_languages": {
+  {
     "name": "Les langages de programmation",
-    "description": "Deck sur les principaux langages de programmation et leurs particularités.",
     "cards": [
-      { "title": "Python", "year": 1991, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Langage polyvalent, simple, top pour l’IA et la data science." },
-      { "title": "Java", "year": 1995, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Langage robuste, utilisé partout, surtout en entreprise." },
-      { "title": "C", "year": 1972, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Le dinosaure, base de beaucoup d’autres langages." },
-      { "title": "C++", "year": 1985, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Version évoluée de C, orientée objet, très utilisée dans le jeu vidéo." },
-      { "title": "JavaScript", "year": 1995, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Le roi du web, pour rendre les sites dynamiques." },
-      { "title": "C#", "year": 2000, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Langage Microsoft, parfait pour les applis Windows et les jeux Unity." },
-      { "title": "Go", "year": 2009, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Langage Google, rapide et efficace pour le back-end." },
-      { "title": "Rust", "year": 2010, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Langage ultra-sécurisé et performant, tendance pour le système." },
-      { "title": "Swift", "year": 2014, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Langage Apple, pour développer sur iOS et macOS." },
-      { "title": "Kotlin", "year": 2011, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Langage moderne, officiel pour Android." },
-      { "title": "PHP", "year": 1995, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Langage incontournable pour les sites web dynamiques." },
-      { "title": "Ruby", "year": 1995, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Langage simple et élégant, star du web avec Rails." },
-      { "title": "SQL", "year": 1974, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Langage de base de données, indispensable pour gérer les datas." },
-      { "title": "TypeScript", "year": 2012, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "JavaScript avec des types, plus sûr pour les gros projets." }
+      {
+        "title": "Python",
+        "year": 1991,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Langage polyvalent, simple, top pour l’IA et la data science."
+      },
+      {
+        "title": "Java",
+        "year": 1995,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Langage robuste, utilisé partout, surtout en entreprise."
+      },
+      {
+        "title": "C",
+        "year": 1972,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Le dinosaure, base de beaucoup d’autres langages."
+      },
+      {
+        "title": "C++",
+        "year": 1985,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Version évoluée de C, orientée objet, très utilisée dans le jeu vidéo."
+      },
+      {
+        "title": "JavaScript",
+        "year": 1995,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Le roi du web, pour rendre les sites dynamiques."
+      },
+      {
+        "title": "C#",
+        "year": 2000,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Langage Microsoft, parfait pour les applis Windows et les jeux Unity."
+      },
+      {
+        "title": "Go",
+        "year": 2009,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Langage Google, rapide et efficace pour le back-end."
+      },
+      {
+        "title": "Rust",
+        "year": 2010,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Langage ultra-sécurisé et performant, tendance pour le système."
+      },
+      {
+        "title": "Swift",
+        "year": 2014,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Langage Apple, pour développer sur iOS et macOS."
+      },
+      {
+        "title": "Kotlin",
+        "year": 2011,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Langage moderne, officiel pour Android."
+      },
+      {
+        "title": "PHP",
+        "year": 1995,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Langage incontournable pour les sites web dynamiques."
+      },
+      {
+        "title": "Ruby",
+        "year": 1995,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Langage simple et élégant, star du web avec Rails."
+      },
+      {
+        "title": "SQL",
+        "year": 1974,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Langage de base de données, indispensable pour gérer les datas."
+      },
+      {
+        "title": "TypeScript",
+        "year": 2012,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "JavaScript avec des types, plus sûr pour les gros projets."
+      }
     ]
   },
-
-  "animaux_decouverte": {
-    "name": "Découvertes d'animaux",
-    "description": "Deck sur les espèces animales découvertes récemment ou insolites.",
+  {
+    "name": "Decouvertes d animaux",
     "cards": [
-      { "title": "St. George's Cross Medusa", "year": 2024, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Nouvelle méduse découverte dans le Pacifique, reconnaissable à sa croix rouge." },
-      { "title": "Limestone Eyelash Pit Viper", "year": 2024, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Vipère verte aux cils, découverte en Thaïlande." },
-      { "title": "Blob-Nosed Fish", "year": 2024, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Poisson au nez unique, trouvé dans les abysses." },
-      { "title": "Vadumodiolus Teredinicola", "year": 2024, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Moule rare découverte dans une forêt sous-marine en Alabama." },
-      { "title": "Giant Amazon Snake", "year": 2024, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Nouvelle espèce de serpent géant d’Amazonie, jusqu’à 6 mètres de long." },
-      { "title": "Timorebestia koprii", "year": -500000000, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Ver prédateur géant préhistorique, découvert au Groenland." },
-      { "title": "Olinguito", "year": 2013, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Petit mammifère carnivore découvert en Équateur, proche du raton laveur." },
-      { "title": "Clouded Tiger Cat", "year": 2024, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Nouveau félin tacheté découvert en Amérique du Sud." },
-      { "title": "Skeleton Panda Sea Squirt", "year": 2024, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Ascidie marine surnommée 'panda squelette', découverte dans l’océan." },
-      { "title": "Voldemort Ant", "year": 2024, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Fourmi rare au look étrange, découverte en Asie." },
-      { "title": "Starry Night Gecko", "year": 2024, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Gecko aux motifs étoilés, récemment identifié." },
-      { "title": "Northern Giant Hummingbird", "year": 2024, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Le plus grand colibri du monde, découvert au Pérou." }
+      {
+        "title": "St. George's Cross Medusa",
+        "year": 2024,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Nouvelle méduse découverte dans le Pacifique, reconnaissable à sa croix rouge."
+      },
+      {
+        "title": "Limestone Eyelash Pit Viper",
+        "year": 2024,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Vipère verte aux cils, découverte en Thaïlande."
+      },
+      {
+        "title": "Blob-Nosed Fish",
+        "year": 2024,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Poisson au nez unique, trouvé dans les abysses."
+      },
+      {
+        "title": "Vadumodiolus Teredinicola",
+        "year": 2024,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Moule rare découverte dans une forêt sous-marine en Alabama."
+      },
+      {
+        "title": "Giant Amazon Snake",
+        "year": 2024,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Nouvelle espèce de serpent géant d’Amazonie, jusqu’à 6 mètres de long."
+      },
+      {
+        "title": "Timorebestia koprii",
+        "year": -500000000,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Ver prédateur géant préhistorique, découvert au Groenland."
+      },
+      {
+        "title": "Olinguito",
+        "year": 2013,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Petit mammifère carnivore découvert en Équateur, proche du raton laveur."
+      },
+      {
+        "title": "Clouded Tiger Cat",
+        "year": 2024,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Nouveau félin tacheté découvert en Amérique du Sud."
+      },
+      {
+        "title": "Skeleton Panda Sea Squirt",
+        "year": 2024,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Ascidie marine surnommée 'panda squelette', découverte dans l’océan."
+      },
+      {
+        "title": "Voldemort Ant",
+        "year": 2024,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Fourmi rare au look étrange, découverte en Asie."
+      },
+      {
+        "title": "Starry Night Gecko",
+        "year": 2024,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Gecko aux motifs étoilés, récemment identifié."
+      },
+      {
+        "title": "Northern Giant Hummingbird",
+        "year": 2024,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png",
+        "description": "Le plus grand colibri du monde, découvert au Pérou."
+      }
     ]
   },
-
-  "inventions": {
+  {
     "name": "Les grandes inventions humaines",
-    "description": "Deck sur les inventions qui ont changé le monde.",
+
     "cards": [
       { "title": "La roue", "year": -3500, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Première révolution des transports et de la mécanique." },
       { "title": "L’écriture", "year": -3200, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Permet la transmission du savoir à travers les âges." },
@@ -99,4 +372,4 @@
       { "title": "Le smartphone", "year": 2007, "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Person_Image_Placeholder.png", "description": "Un ordinateur dans la poche, partout, tout le temps." }
     ]
   }
-}
+]

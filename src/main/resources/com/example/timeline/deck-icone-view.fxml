@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane fx:id="deck_presentation" maxHeight="200.0" prefHeight="200.0" prefWidth="280.0" style="-fx-background-color: white; -fx-border-radius: 15px; -fx-border-color: BD6B00; -fx-border-width: 4;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.DeckIconeController">
+   <children>
+      <Label fx:id="TextNomDeck" alignment="CENTER" layoutX="4.0" layoutY="2.0" prefHeight="115.0" prefWidth="266.0" text="NOM DECK" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="27.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="0.5719697032914017" startY="0.5454545310049347">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.5176470875740051" green="0.29411765933036804" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.7411764860153198" green="0.41960784792900085" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label alignment="BOTTOM_LEFT" layoutX="120.0" layoutY="101.0" prefHeight="58.0" prefWidth="100.0" text=" CARTES" textAlignment="CENTER" textFill="#e09839">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="TextNbCartes" alignment="BOTTOM_RIGHT" layoutX="54.0" layoutY="89.0" prefHeight="66.0" prefWidth="71.0" text="XX" textAlignment="CENTER" textFill="#e09839">
+         <font>
+            <Font size="55.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

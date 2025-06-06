@@ -2,9 +2,9 @@ package application.pojo;
 
 public class CardPOJO {
 
-	public String name;
+	public String title;
 	public String description;
-	public String date;
-	public String url;
+	public String year;
+	public String imageURL;
 	
 }

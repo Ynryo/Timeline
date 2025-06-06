@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<VBox prefHeight="378.0" prefWidth="682.0" styleClass="background1" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.RegleController">
+   <children>
+      <HBox prefHeight="62.0" prefWidth="324.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" maxHeight="80.0" minHeight="69.0" prefHeight="80.0" prefWidth="654.0" styleClass="title" text="Regles" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="221.0" prefWidth="682.0">
+         <children>
+            <VBox alignment="CENTER_LEFT" prefHeight="221.0" prefWidth="435.0">
+               <children>
+                  <Label prefHeight="72.0" prefWidth="442.0" text="A chaque tour,  choisissez une carte de votre main et posez la où vous pensez qu’elle se situe dans la frise chronologiquement. Si vous la placez correctement, vous gagnez +1 point ; si vous vous trompez, vous perdez 1 point et vous devez piocher une nouvelle carte. " wrapText="true" />
+                  <Label prefHeight="48.0" prefWidth="484.0" text="Le but est de se débarrasser de toute ses cartes et d'avoir le plus de point." wrapText="true" />
+                  <Label prefHeight="67.0" prefWidth="487.0" text="Quand vous réussissez à poser votre dernière carte de main, vous recevez +2 points supplémentaires, et si vous parvenez à classer toutes vos cartes sans erreur, vous obtenez un bonus de +5 points." wrapText="true" />
+               </children>
+            </VBox>
+            <Pane prefHeight="221.0" prefWidth="11.0" />
+            <ImageView fitHeight="109.0" fitWidth="189.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/regle.png" />
+               </image>
+            </ImageView>
+            <Pane prefHeight="221.0" prefWidth="20.0" />
+         </children>
+      </HBox>
+      <HBox alignment="BOTTOM_CENTER" prefHeight="0.0" prefWidth="682.0">
+         <children>
+            <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="75.0" mnemonicParsing="false" onAction="#onFermerClicked" prefWidth="100.0" styleClass="menu-outline-button" text="Fermer" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

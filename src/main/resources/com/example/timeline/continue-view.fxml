@@ -54,7 +54,7 @@
    <center>
       <ScrollPane fx:id="savePane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <content>
-            <VBox fx:id="containerVBox" prefHeight="562.0" prefWidth="552.0" />
+            <VBox fx:id="containerVBox" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="240.0" prefWidth="550.0" />
          </content>
       </ScrollPane>
    </center>

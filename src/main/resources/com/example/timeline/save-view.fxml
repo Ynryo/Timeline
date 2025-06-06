@@ -3,14 +3,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.*?>
-<AnchorPane prefHeight="120.0" prefWidth="544.0" style="-fx-border-color: #8d5217; -fx-border-width: 5px;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.SaveViewController">
+<AnchorPane prefHeight="120.0" prefWidth="550.0" style="-fx-border-color: #8d5217; -fx-border-width: 5px;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.SaveViewController">
    <children>
       <Label layoutX="279.0" layoutY="13.0" prefHeight="35.0" prefWidth="235.0" text="Date de sauvegarde : ">
          <font>
             <Font name="Koulen Regular" size="24.0" />
          </font>
       </Label>
-      <Label fx:id="dateHeureLabel" layoutX="279.0" layoutY="43.0" prefHeight="38.0" prefWidth="215.0" text="20/02/2025 15h36" textFill="#8d5217">
+      <Label fx:id="dateHeureLabel" layoutX="279.0" layoutY="43.0" prefHeight="38.0" prefWidth="215.0" text="xx/xx/xx xxhxx" textFill="#8d5217">
          <font>
             <Font name="Koulen Regular" size="24.0" />
          </font>
@@ -20,7 +20,7 @@
             <Font name="Koulen Regular" size="24.0" />
          </font>
       </Label>
-      <Label fx:id="NomLabel" layoutX="120.0" layoutY="26.0" prefHeight="60.0" prefWidth="228.0" text="nom deck" textFill="#8d5217">
+      <Label fx:id="NomLabel" layoutX="120.0" layoutY="26.0" prefHeight="60.0" prefWidth="228.0" text="deck_name" textFill="#8d5217">
          <font>
             <Font name="Koulen Regular" size="24.0" />
          </font>

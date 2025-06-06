@@ -13,4 +13,5 @@ module com.example.timeline {
     opens application.controller to javafx.fxml;
     exports application.utils;
     opens application.utils to javafx.fxml;
+    exports application.pojo to com.fasterxml.jackson.databind;
 }

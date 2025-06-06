@@ -36,9 +36,9 @@ public class MenuPrincipalController {
     }
     @FXML
     void on1PlayerClicked(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/com/example/timeline/deck-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/com/example/timeline/choix-deck-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        DeckLibController controller = fxmlLoader.getController();
+        ChoixDeckController controller = fxmlLoader.getController();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setUserData(controller);
         stage.setScene(scene);
@@ -46,7 +46,7 @@ public class MenuPrincipalController {
     }
     @FXML
     void on2PlayerClicked(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/com/example/timeline/deck-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/com/example/timeline/choix-deck-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);

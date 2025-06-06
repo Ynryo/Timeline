@@ -1,7 +1,7 @@
 package application.model;
 
 import application.io.CardLoader;
-import application.io.FAKECardLoader;
+import application.io.JSONCardLoader;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,8 +20,8 @@ public class Deck {
 
     private void setup(String deckId) {
 //        CardLoader loader = new JSONCardLoader(deckId);
-        CardLoader loader = new FAKECardLoader();
-        loader.load();
+        CardLoader loader = new JSONCardLoader();
+        loader.load(deckId);
         cards = loader.getCards();
         title = loader.getTitle();
         Collections.shuffle(cards);

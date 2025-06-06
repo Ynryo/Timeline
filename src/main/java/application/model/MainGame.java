@@ -6,12 +6,14 @@ public class MainGame {
 	private Player player1;
 	private Deck deck;
 	private  Card firstCard;
+	private String deckId;
 
 	// Constructeur
 	
 	public MainGame(String deckId) {
 		super();
-		setupGame(deckId);
+		this.deckId = deckId;
+		setupGame();
 	}
 	
 	// getters / setter
@@ -30,7 +32,7 @@ public class MainGame {
 
 	// logic
 
-	private void setupGame(String deckId) {
+	private void setupGame() {
 		player1 = new Player("Joueur 1");
 		deck = new Deck(deckId);
 		firstCard =  deck.drawCard();

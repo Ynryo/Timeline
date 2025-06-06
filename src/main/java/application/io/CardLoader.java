@@ -1,26 +1,26 @@
 package application.io;
 
+import application.model.Card;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import application.model.Card;
 
 public abstract class CardLoader {
 
 	private List<Card> cards;
 	private String title;
-	
-	
+
+
 	public CardLoader() {
 		cards = new ArrayList<>();
 	}
-	
-	public abstract void load();
+
+	public abstract void load(String nameDeck);
 
 	public List<Card> getCards() {
 		return cards;
 	}
-	
+
 	public void addCard(Card card) {
 		cards.add(card);
 	}
@@ -32,6 +32,6 @@ public abstract class CardLoader {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	
+
 
 }

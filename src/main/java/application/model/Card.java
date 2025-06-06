@@ -7,19 +7,28 @@ public class Card {
     private String title;
     private String date;
     private String urlImage;
+    private String description;
 
-    public Card(String title, String date, int position, String urlImage) {
+    public Card(String title, String date, String urlImage) {
         super();
         this.title = title;
         this.date = date;
         this.urlImage = urlImage;
     }
 
+    public Card(String title, String date, String urlImage, String description) {
+        super();
+        this.title = title;
+        this.date = date;
+        this.urlImage = urlImage;
+        this.description = description;
+    }
+
     public Card(CardPOJO cardP) {
         super();
-        this.title = cardP.name;
-        this.date = cardP.date;
-        this.urlImage = cardP.url;
+        this.title = cardP.title;
+        this.date = cardP.year;
+        this.urlImage = cardP.imageURL;
     }
 
     public String getTitle() {
@@ -40,11 +49,13 @@ public class Card {
     }
 
 
-
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     @Override
     public String toString() {
-        return "Card [title=" + title + ", date=" + date + ", position= ]";
+        return "Card [title=" + title + ", year=" + date + ", position= ]";
     }
     public void setNom(String nom) {
         this.title = nom;

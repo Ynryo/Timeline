@@ -6,8 +6,8 @@ import java.io.*;
 
 public class SaveManager {
 
-    private static final String SAVE_FOLDER = "ressources/saves/";
-    private static final String NUM_SAVE_FILE = "ressources/saves/numSave.txt";
+    private static final String SAVE_FOLDER = "ressources/save/";
+    private static final String NUM_SAVE_FILE = "ressources/save/numSave.txt";
 
     static {
         File folder = new File(SAVE_FOLDER);

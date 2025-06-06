@@ -59,11 +59,15 @@ public class GameController {
 
     @FXML
     public void initialize() throws IOException {
-
         initUI();
+    }
+
+    public void setDeck(String title) {
+        this.selectedDeck = title;
+        System.out.println("Game controller"+selectedDeck);
+
         model = new MainGame(selectedDeck);
         initUIFromModel();
-
     }
 
     public void setSelectedDeck(String selectedDeck) {
@@ -75,6 +79,7 @@ public class GameController {
     }
 
     private void initUIFromModel() {
+//        this.dragLayer.getScene().setUserData(model);
         dropZone.setPrefWidth(641);
         dropZone.setMaxWidth(641);
         points = 0;
@@ -120,12 +125,14 @@ public class GameController {
     @FXML
     void onReglesClicked(ActionEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/timeline/regle.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/timeline/regles.fxml"));
             Parent root = fxmlLoader.load();
             Stage stage = new Stage();
             stage.setTitle("Règles du jeu");
             stage.setScene(new Scene(root));
             stage.setResizable(false);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.initOwner(((Node) event.getSource()).getScene().getWindow());
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();

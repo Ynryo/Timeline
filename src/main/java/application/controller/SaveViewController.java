@@ -25,7 +25,7 @@ public class SaveViewController {
         name = name.substring(0, name.length() - 4); // pour enlever le .bin
 
         // On split la chaîne sur le tiret avant le nom
-        // La chaîne est "heure-date-nom", on veut séparer à partir du dernier '-'
+        // La chaîne est "heure-year-nom", on veut séparer à partir du dernier '-'
         int index = name.lastIndexOf('-');
         if (index != -1) {
             String dateHeure = name.substring(0, index); // "15-52-05-06-2025"
