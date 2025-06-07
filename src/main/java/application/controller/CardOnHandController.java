@@ -26,6 +26,4 @@ public class CardOnHandController {
 	public String getDateFromController(){
 		return controlledCard.getDate();
 	}
-
-
 }
