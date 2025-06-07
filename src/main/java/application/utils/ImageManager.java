@@ -2,20 +2,25 @@ package application.utils;
 
 import javafx.scene.image.Image;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ImageManager {
 
 	private static ImageManager instance;
+	private static Map<String, Image> cache = new HashMap<>();
 
-	public ImageManager() {
-	}
+	public ImageManager() {}
 
 	public Image getImage(String urlImage) {
-		// TODO: verifier si pas deja récupérée dans le cache
-
-		System.out.println("Fetch image from URL " + urlImage);
-		Image newImage = new Image(urlImage);
-		// TODO conserver l'image en cache
-		return newImage;
+		if (cache.containsKey(urlImage)) {
+			return cache.get(urlImage);
+		} else {
+			System.out.println("Fetch image from URL " + urlImage);
+			Image newImage = new Image(urlImage);
+			cache.put(urlImage, newImage);
+			return newImage;
+		}
 	}
 
 	public static ImageManager getInstance() {
