@@ -4,7 +4,6 @@ import application.model.Card;
 import application.model.Deck;
 import application.model.Hand;
 import application.model.MainGame;
-import application.utils.SaveManager;
 import application.views.CardViewOnHand;
 import javafx.animation.*;
 import javafx.event.ActionEvent;
@@ -84,7 +83,11 @@ public class GameController implements Serializable {
     }
 
     private void initUIFromModel() {
-//        this.dragLayer.getScene().setUserData(model);
+        dragLayer.sceneProperty().addListener((obs, oldScene, newScene) -> {
+            if (newScene != null) {
+                newScene.setUserData(model);
+            }
+        });
         dropZone.setPrefWidth(641);
         dropZone.setMaxWidth(641);
         points = 0;
@@ -115,6 +118,8 @@ public class GameController implements Serializable {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/timeline/leaveConfirm.fxml"));
             Parent root = fxmlLoader.load();
             Stage stage = new Stage();
+            LeaveConfirmController controller = fxmlLoader.getController();
+            controller.setDatasForSave(this.getMainClass(), selectedDeck);
             stage.setTitle("Confirmation de quitter");
             stage.setScene(new Scene(root));
             stage.setResizable(false);
@@ -124,8 +129,6 @@ public class GameController implements Serializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        SaveManager saveManager = new SaveManager();
-        saveManager.save(this.getMainClass(), selectedDeck);
     }
 
     @FXML
