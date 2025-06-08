@@ -8,7 +8,7 @@ import java.util.Map;
 public class ImageManager {
 
 	private static ImageManager instance;
-	private static Map<String, Image> cache = new HashMap<>();
+	private static final Map<String, Image> cache = new HashMap<>();
 
 	public ImageManager() {}
 
