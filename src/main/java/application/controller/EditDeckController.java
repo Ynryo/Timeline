@@ -39,7 +39,7 @@ public class EditDeckController {
     private String nomDeckAEditer;
 
     public void close(ActionEvent actionEvent) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/timeline/menu-principal-view.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fr/ynryo/timeline/menu-principal-view.fxml"));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(loader.load()));
     }

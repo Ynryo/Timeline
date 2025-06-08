@@ -13,7 +13,7 @@ import java.io.IOException;
 
 public class JSONCardLoader extends CardLoader {
 
-	private static final String PATH = "src/main/resources/com/example/timeline/json/decks.json";
+	private static final String PATH = "src/main/resources/fr/ynryo/timeline/json/decks.json";
 
 	@Override
 	public void load(String nameDeck) {

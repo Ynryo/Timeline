@@ -36,4 +36,4 @@ build/
 
 ### Mac OS ###
 .DS_Store
-/src/main/resources/com/example/timeline/save/
+/src/main/resources/fr/ynryo/timeline/save/

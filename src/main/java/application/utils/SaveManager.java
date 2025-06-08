@@ -41,7 +41,7 @@ public class SaveManager {
             Deck deck = game.getDeck();
             System.out.println("Nom du deck chargé : " + deck.getTitle());
 
-            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/com/example/timeline/game-view.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/fr/ynryo/timeline/game-view.fxml"));
             Parent root = fxmlLoader.load();
             GameController gameController = fxmlLoader.getController();
             gameController.loadGameFromSave(getDeckName(saveName), game);

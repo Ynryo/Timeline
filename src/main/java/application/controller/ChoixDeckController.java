@@ -30,7 +30,7 @@ public class ChoixDeckController {
     void initialize()  {
 
         ObjectMapper mapper = new ObjectMapper();
-        File file = new File("src/main/resources/com/example/timeline/json/decks.json");
+        File file = new File("src/main/resources/fr/ynryo/timeline/json/decks.json");
         CollectionPOJO[] allDecks = null;
         try {
             allDecks = mapper.readValue(file, CollectionPOJO[].class);
@@ -44,7 +44,7 @@ public class ChoixDeckController {
 
         for (CollectionPOJO deck : allDecks){
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/timeline/deck-icone-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fr/ynryo/timeline/deck-icone-view.fxml"));
 
             try {
                 AnchorPane deckPresentation = loader.load();
@@ -91,7 +91,7 @@ public class ChoixDeckController {
 
     @FXML
     void onPlayClicked(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/com/example/timeline/game-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/fr/ynryo/timeline/game-view.fxml"));
         Parent root = fxmlLoader.load();
         GameController aGameController = fxmlLoader.getController();
 
@@ -108,13 +108,13 @@ public class ChoixDeckController {
 
     @FXML
     void openEditDeck(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/timeline/edit-deck-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fr/ynryo/timeline/edit-deck-view.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(fxmlLoader.load()));
     }
 
     public void back(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/timeline/menu-principal-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fr/ynryo/timeline/menu-principal-view.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(fxmlLoader.load()));
     }

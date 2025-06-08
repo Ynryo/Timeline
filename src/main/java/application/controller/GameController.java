@@ -115,7 +115,7 @@ public class GameController implements Serializable {
     @FXML
     void onQuitterClicked(ActionEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/timeline/leaveConfirm.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fr/ynryo/timeline/leaveConfirm.fxml"));
             Parent root = fxmlLoader.load();
             Stage stage = new Stage();
             LeaveConfirmController controller = fxmlLoader.getController();
@@ -134,7 +134,7 @@ public class GameController implements Serializable {
     @FXML
     void onReglesClicked(ActionEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/timeline/regles.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fr/ynryo/timeline/regles.fxml"));
             Parent root = fxmlLoader.load();
             Stage stage = new Stage();
             stage.setTitle("Règles du jeu");
@@ -157,7 +157,7 @@ public class GameController implements Serializable {
             drawZone.getChildren().add(view);
         }
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/timeline/unknown-card-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fr/ynryo/timeline/unknown-card-view.fxml"));
             Node unknownCardView = loader.load();
             unknownCardView.setScaleX(1.2);
             unknownCardView.setScaleY(1.2);

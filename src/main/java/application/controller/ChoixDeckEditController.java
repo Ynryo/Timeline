@@ -21,7 +21,7 @@ public class ChoixDeckEditController {
 //    @FXML
 //    void initialize() {
 //        // Chargement des decks depuis le fichier JSON
-//        JSONManipulator json = new JSONManipulator("src/main/resources/com/example/timeline/json/decks.json");
+//        JSONManipulator json = new JSONManipulator("src/main/resources/fr/ynryo/timeline/json/decks.json");
 //        List<String> deckIds = json.getAllDeckIds();
 //
 //        try {
@@ -31,7 +31,7 @@ public class ChoixDeckEditController {
 //            int maxColumns = 3; // Basé sur les contraintes de colonnes dans le FXML
 //
 //            for (String deckId : deckIds) {
-//                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/timeline/deck-presentation.fxml"));
+//                FXMLLoader loader = new FXMLLoader(getClass().getResource("/fr/ynryo/timeline/deck-presentation.fxml"));
 //
 //                AnchorPane deckPresentation = loader.load();
 //
@@ -64,7 +64,7 @@ public class ChoixDeckEditController {
     @FXML
     void back(ActionEvent event) throws IOException {
         Stage stage = (Stage) backBtn.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/timeline/menu-principal-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fr/ynryo/timeline/menu-principal-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
     }

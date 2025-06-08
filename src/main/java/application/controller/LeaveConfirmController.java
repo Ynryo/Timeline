@@ -31,7 +31,7 @@ public class LeaveConfirmController {
         SaveManager saveManager = new SaveManager();
         saveManager.save(mainGame, selectedDeck);
 
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/com/example/timeline/menu-principal-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/fr/ynryo/timeline/menu-principal-view.fxml"));
         modalStage.close();
         mainStage.setScene(new Scene(fxmlLoader.load()));
     }

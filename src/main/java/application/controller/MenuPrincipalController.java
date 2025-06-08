@@ -36,7 +36,7 @@ public class MenuPrincipalController {
     }
     @FXML
     void on1PlayerClicked(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/com/example/timeline/choix-deck-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/fr/ynryo/timeline/choix-deck-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         ChoixDeckController controller = fxmlLoader.getController();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -46,7 +46,7 @@ public class MenuPrincipalController {
     }
     @FXML
     void on2PlayerClicked(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/com/example/timeline/choix-deck-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/fr/ynryo/timeline/choix-deck-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -69,7 +69,7 @@ public class MenuPrincipalController {
     }
     @FXML
     void onContinuerClicked(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/com/example/timeline/continue-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/fr/ynryo/timeline/continue-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -78,7 +78,7 @@ public class MenuPrincipalController {
     }
     @FXML
     void onDeckEditClicked(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/com/example/timeline/choix-deck-edit-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/fr/ynryo/timeline/choix-deck-edit-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);

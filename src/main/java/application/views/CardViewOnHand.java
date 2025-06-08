@@ -25,7 +25,7 @@ public class CardViewOnHand extends VBox {
 
 	public CardViewOnHand(CardOnHandController controller) {
 		super();
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/timeline/card-view.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/fr/ynryo/timeline/card-view.fxml"));
 		try {
 			this.controller = controller;
 			root = loader.load();

@@ -32,7 +32,7 @@ public class ContinueController {
         for (String save : saves) {
             if (save.endsWith(".bin")) {
                 File file = new File(save);
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/timeline/save-view.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/fr/ynryo/timeline/save-view.fxml"));
                 Parent fileItem = loader.load();
                 SaveViewController controller = loader.getController();
                 controller.setData(file.getName());
@@ -44,7 +44,7 @@ public class ContinueController {
 
     @FXML
     void onRetourClicked(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/com/example/timeline/menu-principal-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/fr/ynryo/timeline/menu-principal-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
