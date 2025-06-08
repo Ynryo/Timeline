@@ -4,6 +4,7 @@ import application.model.Card;
 import application.model.Deck;
 import application.model.Hand;
 import application.model.MainGame;
+import application.utils.SaveManager;
 import application.views.CardViewOnHand;
 import javafx.animation.*;
 import javafx.event.ActionEvent;
@@ -120,6 +121,8 @@ public class GameController {
             e.printStackTrace();
         }
         //TODO: save bin
+        SaveManager saveManager = new SaveManager();
+        saveManager.save(this, selectedDeck);
     }
 
     @FXML

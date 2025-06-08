@@ -1,12 +1,16 @@
 package application.utils;
 
-import application.model.MainGame;
+import application.controller.GameController;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.time.LocalDateTime;
 
 public class SaveManager {
 
-    private static final String SAVE_FOLDER = "ressources/save/";
+    private static final String SAVE_FOLDER = System.getProperty("user.home") + "AppData\\Local\\.timeline\\save\\";
     private static final String NUM_SAVE_FILE = "ressources/save/numSave.txt";
 
     static {
@@ -16,39 +20,28 @@ public class SaveManager {
         }
     }
 
-    public static int getAndIncrementSaveNumber() {
-        int num = 1;
-        File numFile = new File(NUM_SAVE_FILE);
 
-        if (numFile.exists()) {
-            try (BufferedReader br = new BufferedReader(new FileReader(numFile))) {
-                String line = br.readLine();
-                if (line != null) {
-                    num = Integer.parseInt(line.trim());
-                }
-            } catch (IOException | NumberFormatException e) {
-                System.err.println("Erreur lecture numSave.txt : " + e.getMessage());
-                num = 1;
-            }
-        }
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(numFile, false))) {
-            bw.write(String.valueOf(num + 1));
-        } catch (IOException e) {
-            System.err.println("Erreur ecriture numSave.txt : " + e.getMessage());
-        }
-
-        return num;
-    }
-
-
-    public static void save(MainGame game, String saveName) {
-        String filePath = SAVE_FOLDER + saveName + ".dat";
+    public static void save(GameController game, String deckName) {
+        String filePath = SAVE_FOLDER + getSaveName(deckName) + ".bin";
+        System.out.println("filePath = " + filePath);
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filePath))) {
             oos.writeObject(game);
             System.out.println("Partie sauvegardee sous : " + filePath);
         } catch (IOException e) {
             System.err.println("Erreur lors de la sauvegarde : " + e.getMessage());
         }
+    }
+
+    private static String getSaveName(String deckId) {
+        return String.format(
+                "%02d-%02d-%02d-%02d-%4d-%s",
+                LocalDateTime.now().getHour(),
+                LocalDateTime.now().getMinute(),
+                LocalDateTime.now().getDayOfMonth(),
+                LocalDateTime.now().getMonthValue(),
+                LocalDateTime.now().getYear(),
+                deckId
+        );
     }
 
 //    public static MainGame load(String saveName) {
@@ -76,13 +69,13 @@ public class SaveManager {
 
 
     public static boolean deleteSave(String saveName) {
-        File file = new File(SAVE_FOLDER + saveName + ".dat");
+        File file = new File(SAVE_FOLDER + saveName + ".bin");
         return file.delete();
     }
 
     public static String[] listSaves() {
         File folder = new File(SAVE_FOLDER);
         System.out.println(folder.getName());
-        return folder.list((dir, name) -> name.endsWith(".dat"));
+        return folder.list((dir, name) -> name.endsWith(".bin"));
     }
 }
