@@ -1,22 +1,22 @@
 package application.controller;
 
+import application.utils.SaveManager;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.VBox;
 
-import java.io.File;
-import java.net.URL;
+import java.io.IOException;
 
 public class SaveViewController {
 
-    @FXML
-    private Label NomLabel;
-
+    @FXML private Label saveName;
+    @FXML private Label dateHeureLabel;
+    @FXML private Button deleteButton;
+    @FXML private Button loadButton;
     private String fileName;
+    private ContinueController controller;
 
-    @FXML
-    private Label dateHeureLabel;
 
     public void setData(String name) {
         this.fileName = name;
@@ -33,14 +33,15 @@ public class SaveViewController {
             String nomDeck = name.substring(index + 1); // "chaise"
 
             // Mettre dans les labels (supposons que NomLabel et dateHeurLabel sont des Label)
-            NomLabel.setText(nomDeck);
+            saveName.setText(nomDeck);
             dateHeureLabel.setText(dateHeure);
         } else {
             // Format inattendu, on met tout dans un label pour ne rien perdre
-            NomLabel.setText(name);
+            saveName.setText(name);
             dateHeureLabel.setText("");
         }
     }
+
     public String formatDateHeure(String raw) {
         // raw = "15-52-05-06-2025"
         String[] parts = raw.split("-");
@@ -59,34 +60,24 @@ public class SaveViewController {
     }
 
     @FXML
-    public void onClickDelete() {
+    public void onClickDelete() throws IOException {
         if (fileName == null) {
             System.out.println("Erreur : nom de fichier non défini");
             return;
         }
 
-        try {
-            // Construire le chemin vers le fichier
-            URL url = getClass().getResource("/com/example/timeline/save/" + fileName);
-            if (url != null) {
-                File file = new File(url.toURI());
+        SaveManager saveManager = new SaveManager();
+        saveManager.deleteSave(fileName);
+        controller.initialize();
+    }
 
-                if (file.exists()) {
-                    boolean deleted = file.delete();
-                    if (deleted) {
-                        System.out.println("Fichier supprimé : " + fileName);
+    @FXML
+    void loadGame(ActionEvent event) {
+        SaveManager saveManager = new SaveManager();
+        saveManager.load(fileName, event);
+    }
 
-                        // Supprimer cet élément de l'interface
-                        Node parent = NomLabel.getParent(); // L'AnchorPane
-                        if (parent.getParent() instanceof VBox) {
-                            VBox container = (VBox) parent.getParent();
-                            container.getChildren().remove(parent);
-                        }
-                    }
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public void setController(ContinueController controller) {
+        this.controller = controller;
     }
 }

@@ -3,18 +3,18 @@ package application.model;
 import application.io.CardLoader;
 import application.io.JSONCardLoader;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Deck {
+public class Deck implements Serializable {
 
     private String title;
     private List<Card> cards;
 
     public Deck(String deckId) {
         cards = new ArrayList<>();
-
         setup(deckId);
     }
 
@@ -27,6 +27,7 @@ public class Deck {
         Collections.shuffle(cards);
     }
     public boolean isDrawEmpty() { return cards.isEmpty(); }
+
     public Card drawCard() {
         if (cards.isEmpty()) {
             return null;

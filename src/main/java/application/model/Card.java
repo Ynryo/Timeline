@@ -2,7 +2,9 @@ package application.model;
 
 import application.pojo.CardPOJO;
 
-public class Card {
+import java.io.Serializable;
+
+public class Card implements Serializable {
 
     private String title;
     private String date;

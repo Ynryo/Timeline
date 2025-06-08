@@ -1,6 +1,8 @@
 package application.model;
 
-public class MainGame {
+import java.io.Serializable;
+
+public class MainGame implements Serializable {
 
 	private static final int INITIAL_NB_CARDS = 4;
 	private Player player1;
@@ -9,7 +11,6 @@ public class MainGame {
 	private String deckId;
 
 	// Constructeur
-	
 	public MainGame(String deckId) {
 		super();
 		this.deckId = deckId;
@@ -17,7 +18,6 @@ public class MainGame {
 	}
 	
 	// getters / setter
-	
 	public Hand getPlayerHand() {
 		return player1.getHand();
 	}
@@ -31,7 +31,6 @@ public class MainGame {
 	}
 
 	// logic
-
 	private void setupGame() {
 		player1 = new Player("Joueur 1");
 		deck = new Deck(deckId);

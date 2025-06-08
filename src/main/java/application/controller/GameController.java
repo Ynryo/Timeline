@@ -26,26 +26,20 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class GameController {
-    @FXML
-    private HBox dropZone;
-    @FXML
-    private HBox handZone;
-    @FXML
-    private StackPane drawZone;
-    @FXML
-    private Pane dragLayer;
-    @FXML
-    private Label titreDeck;
-    @FXML
-    private Label pointLabel;
-    @FXML
-    private Label victoryLabel;
+public class GameController implements Serializable {
+    @FXML private HBox dropZone;
+    @FXML private HBox handZone;
+    @FXML private StackPane drawZone;
+    @FXML private Pane dragLayer;
+    @FXML private Label titreDeck;
+    @FXML private Label pointLabel;
+    @FXML private Label victoryLabel;
     private boolean isAnimationInProgress = false;
     private MainGame model;
     private int points;
@@ -65,10 +59,20 @@ public class GameController {
 
     public void setDeck(String title) {
         this.selectedDeck = title;
-        System.out.println("Game controller"+selectedDeck);
-
+        System.out.println("Game controller " + selectedDeck);
         model = new MainGame(selectedDeck);
         initUIFromModel();
+    }
+
+    public void loadGameFromSave(String deck, MainGame model) {
+        this.selectedDeck = deck;
+        System.out.println("Game controller " + selectedDeck);
+        this.model = model;
+        initUIFromModel();
+    }
+
+    public MainGame getMainClass() {
+        return model;
     }
 
     public void setSelectedDeck(String selectedDeck) {
@@ -120,9 +124,8 @@ public class GameController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //TODO: save bin
         SaveManager saveManager = new SaveManager();
-        saveManager.save(this, selectedDeck);
+        saveManager.save(this.getMainClass(), selectedDeck);
     }
 
     @FXML
@@ -541,5 +544,4 @@ public class GameController {
             node.setTranslateX(node.getTranslateX() + totalWidth / 2);
         }
     }
-
 }

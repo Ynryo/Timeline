@@ -1,6 +1,7 @@
 package application.controller;
 
 import application.MainApplication;
+import application.utils.SaveManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,45 +13,34 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
-import java.util.Arrays;
+import java.util.List;
 
 public class ContinueController {
+    @FXML private VBox containerVBox;
+    private List<String> saves;
+
     @FXML
-    private VBox containerVBox;
-
-    public void initialize() {
-        try {
-            URL url = getClass().getResource("/com/example/timeline/save");
-            if (url == null) {
-                System.out.println("Dossier save introuvable");
-                return;
+    public void initialize() throws IOException {
+        SaveManager saveManager = new SaveManager();
+        saves = saveManager.listSaves();
+        if (saves == null) {
+            System.out.println("No save found in the save folder.");
+            return;
+        }
+        containerVBox.getChildren().clear();
+        System.out.println("saves = " + saves.size());
+        for (String save : saves) {
+            if (save.endsWith(".bin")) {
+                File file = new File(save);
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/timeline/save-view.fxml"));
+                Parent fileItem = loader.load();
+                SaveViewController controller = loader.getController();
+                controller.setData(file.getName());
+                controller.setController(this);
+                containerVBox.getChildren().add(fileItem);
             }
-
-            File folder = new File(url.toURI());
-            if (folder.exists() && folder.isDirectory()) {
-                File[] files = folder.listFiles((dir, name) -> name.toLowerCase().endsWith(".bin"));
-                System.out.println("files  : " + Arrays.toString(files));
-
-                if (files != null) {
-                    for (File file : files) {
-                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/timeline/save-view.fxml"));
-                        Parent fileItem = loader.load();
-
-                        SaveViewController controller = loader.getController();
-                        controller.setData(file.getName());
-
-                        containerVBox.getChildren().add(fileItem);
-                    }
-                }
-            } else {
-                System.out.println("Le dossier n'existe pas ou n'est pas un rÃ©pertoire");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
-
 
     @FXML
     void onRetourClicked(ActionEvent event) throws IOException {

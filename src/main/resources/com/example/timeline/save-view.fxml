@@ -15,17 +15,22 @@
             <Font name="Koulen Regular" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="48.0" layoutY="26.0" prefHeight="60.0" prefWidth="61.0" text="deck :">
+      <Label layoutX="29.0" layoutY="26.0" prefHeight="60.0" prefWidth="61.0" text="deck :">
          <font>
             <Font name="Koulen Regular" size="24.0" />
          </font>
       </Label>
-      <Label fx:id="NomLabel" layoutX="120.0" layoutY="26.0" prefHeight="60.0" prefWidth="228.0" text="deck_name" textFill="#8d5217">
+      <Label fx:id="saveName" layoutX="100.0" layoutY="26.0" prefHeight="60.0" prefWidth="228.0" text="deck_name" textFill="#8d5217">
          <font>
             <Font name="Koulen Regular" size="24.0" />
          </font>
       </Label>
-      <Button fx:id="deleteButton" layoutX="342.0" layoutY="81.0" mnemonicParsing="false" onAction="#onClickDelete" prefHeight="25.0" prefWidth="100.0" style="-fx-border-color: red; -fx-background-color: red; -fx-background-radius: 5; -fx-border-radius: 5;" text="Supprimer" textFill="WHITE">
+      <Button fx:id="deleteButton" layoutX="438.0" layoutY="81.0" mnemonicParsing="false" onAction="#onClickDelete" prefHeight="25.0" prefWidth="100.0" style="-fx-border-color: red; -fx-background-color: red; -fx-background-radius: 5; -fx-border-radius: 5;" text="Supprimer" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="loadButton" layoutX="331.0" layoutY="81.0" mnemonicParsing="false" onAction="#loadGame" prefHeight="25.0" prefWidth="100.0" style="-fx-border-color: #8d5217; -fx-background-color: white; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-width: 1.5; -fx-text-fill: #8d5217;" text="Charger" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
